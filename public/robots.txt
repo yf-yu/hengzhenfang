@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /original.html
+Disallow: /*.json$
+
+Sitemap: https://hengzhenfang.pages.dev/sitemap.xml
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+Disallow: /original.html
+Crawl-delay: 1
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /original.html
+Crawl-delay: 2

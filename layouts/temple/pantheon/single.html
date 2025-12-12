@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ partial "nav-bar.html" . }}
+
+<main class="inner-page temple-page">
+  <div class="deity-detail-header">
+    <div class="deity-profile">
+      <div class="deity-profile-img">
+        <div class="deity-surname">{{ .Params.surName }}</div>
+      </div>
+      <div class="deity-keywords">
+        {{ range .Params.keywords }}
+        <span class="keyword">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+    <div class="deity-quick-info">
+      <h2 class="deity-name">{{ .Title }}</h2>
+      <p class="deity-desc">{{ .Description }}</p>
+      <div class="info-item">
+        <div class="info-label">神格特質</div>
+        <div>{{ .Params.traits }}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">主要事蹟</div>
+        <div>{{ .Params.events }}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">相關廟宇</div>
+        <div>{{ .Params.temple }}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2 class="section-title">🏯 廟宇資訊</h2>
+    <div class="section-content">
+      <div class="info-item">
+        <div class="info-label">【廟名】松湖宮</div>
+        <div>📍 地址：嘉義縣東石鄉○○村○○號</div>
+        <div>📅 邢王爺主要祭典：農曆○月○日</div>
+        <div>📞 聯絡方式：待官方提供</div>
+      </div>
+      <p><em>註：作者個人敘事僅聚焦於{{ .Title }}，詳見《神性回憶錄》。</em></p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="section-title">📚 {{ .Title }}故事集</h2>
+    <div class="section-content">
+      <div class="coming-soon-placeholder">
+        <div class="coming-soon-icon">⛩️</div>
+        <h3>神明故事撰寫中</h3>
+        <p>我們正在整理{{ .Title }}的精彩故事，即將為您呈現！</p>
+        <button class="notification-btn" onclick="alert('感謝您的耐心等待！{{ .Title }}的故事正在精心準備中。')">故事完成時通知我</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ partial "footer.html" . }}
+{{ end }}

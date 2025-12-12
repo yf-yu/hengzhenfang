@@ -1,0 +1,67 @@
+{{ define "main" }}
+<main class="home-container">
+  <!-- 品牌標頭 -->
+  <div class="brand-header">
+    <!-- 衡真坊 Logo -->
+    <div class="hengzhen-logo">
+      <svg width="140" height="140" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="10" fill="url(#minimalLight)"/>
+        <circle cx="50" cy="50" r="15" fill="none" 
+                stroke="rgba(249,168,37,0.2)"
+                stroke-width="0.8"
+                stroke-dasharray="3,1.5"/>
+        <circle cx="20" cy="20" r="1" fill="rgba(33,33,33,0.2)"/>
+        <circle cx="80" cy="20" r="1" fill="rgba(33,33,33,0.2)"/>
+        <circle cx="20" cy="80" r="1" fill="rgba(33,33,33,0.2)"/>
+        <circle cx="80" cy="80" r="1" fill="rgba(33,33,33,0.2)"/>
+        <defs>
+          <radialGradient id="minimalLight" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#F9A825"/>
+            <stop offset="70%" stop-color="#F9A825" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#F9A825" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <!-- 衡真坊書法大字 -->
+    <h1 class="hengzhen-title">衡真坊</h1>
+  </div>
+
+  <!-- 核心信念 -->
+  <h2 class="core-belief">對的事情，就該堅持。</h2>
+
+  <!-- 公告區塊 -->
+  <div class="announcement-box">
+    <div class="announcement-title"> 📢 最新公告 📜</div>
+    <div class="announcement-text">
+      你可以善良到什麼程度？<br>
+      超過哪個階段會變愚蠢？<br>
+      超過哪個階段變服從？<br><br>    
+      <a href="/notice/honesty/" class="truth-highlight">真正的善良，是對自己誠實。</a>
+    </div>
+
+    <!-- 動態歷史公告（由 content/notice/*.md 生成，排除 honesty.md） -->
+    <div class="dynamic-announcements" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #ddd;">
+      <ul style="text-align: left; color: #555; font-size: 0.95rem; margin-top: 0.8rem;">
+        {{ range first 3 (where site.RegularPages "Section" "notice") }}
+          {{ if ne .File.BaseFileName "honesty" }}
+            <li style="margin-bottom: 0.8rem;"><strong>{{ .Date.Format "2006/01/02" }}</strong>：{{ .Title }}</li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <!-- 主要按鈕 -->
+  <div class="main-buttons">
+    <a href="/modern/" class="main-btn">現代生存策</a>
+    <a href="/temple/" class="main-btn">神性回憶錄</a>
+  </div>
+</main>
+
+<!-- Footer（與 partial 一致） -->
+<footer class="footer">
+  <div class="footer-belief">對的事情，就該堅持。</div>
+  <div class="footer-text">© 2025 衡真坊</div>
+</footer>
+{{ end }}

@@ -1,0 +1,45 @@
+baseURL: "https://hengzhenfang.com/"  # 部署時替換為你的網域
+languageCode: "zh-TW"
+title: "現代生存策與神性回憶錄"
+
+# 🔸 必須明確定義語言（即使只用一種）
+languages:
+  zh-TW:
+    languageName: "繁體中文"
+    weight: 1
+    disableKinds: ["taxonomy", "term", "RSS"]
+
+defaultContentLanguage: "zh-TW"
+
+
+# 啟用 sitemap.xml
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
+
+# 頁面組建設定
+build:
+  useResourceCacheWhen: never  # Cloudflare Pages 相容
+
+outputs:
+  home: ["HTML", "sitemap"]
+  page: ["HTML"]
+
+# Open Graph 設定
+params:
+  description: "現代生存策與神性回憶錄 - 對的事情,就該堅持。提供生存法則、經濟獨立指引與信仰服務。"
+  keywords: "現代生存策,神性回憶錄,生存法則,經濟獨立,信仰服務"
+  # 若未來有社群分享圖，可在此設定 ogImage
+  # ogImage: "/images/og.jpg"
+
+# 移除 Hugo 預設的 robots.txt，由你手動控制
+disableRobotsTXT: true
+
+# 頁面類型對應（確保 /modern/rules/ 被視為 modern section）
+taxonomies: {}
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

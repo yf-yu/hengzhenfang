@@ -1,0 +1,28 @@
+<nav class="nav-bar">
+  <div class="nav-brand" onclick="window.location.href='/'">
+    {{ partial "compass-logo.html" . }}
+    <span>{{ .Title | default "衡真坊" }}</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links">
+    {{ if not .IsHome }}
+    <a class="nav-link" href="/">首頁</a>
+    {{ end }}
+    {{ if ne .RelPermalink "/modern/" }}
+    <a class="nav-link" href="/modern/">現代生存策</a>
+    {{ else }}
+    <a class="nav-link active">現代生存策</a>
+    {{ end }}
+    {{ if ne .RelPermalink "/temple/" }}
+    <a class="nav-link" href="/temple/">神性回憶錄</a>
+    {{ else }}
+    <a class="nav-link active">神性回憶錄</a>
+    {{ end }}
+    <a class="nav-link" href="/contact/">聯絡我</a>
+  </div>
+  <div class="nav-overlay" onclick="toggleMenu()"></div>
+</nav>

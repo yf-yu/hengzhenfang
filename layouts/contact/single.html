@@ -1,0 +1,252 @@
+{{ define "main" }}
+{{ partial "nav-bar.html" . }}
+
+<main class="inner-page">
+  <!-- 聯絡頁面專用 header -->
+  <div class="contact-header">
+    <h1 class="contact-title">與我聯繫</h1>
+    <p class="contact-subtitle">
+      🌀 如果你覺得問題一團亂，不知道從哪開始<br>    
+      我<strong>唯一擅長且負責的事</strong>，就是幫你從混亂中，<br>
+      <strong style="border-bottom: 2px solid #F9A825;">梳理出真正關鍵的那「個」點。</strong>
+    </p>
+  </div>
+  
+  <!-- 問題快照框架 -->
+  <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2.5rem 0; border: 2px solid #e9ecef;">
+    <div style="color: #283593; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.5;">
+      💡 請在信中告訴我這三件事，幫助我更理解你的狀況：
+    </div>
+    <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+      為了在<strong>一次回信</strong>中給你最有價值的梳理，請盡量提供以下資訊。<br>
+      不用完美，但越完整，我的梳理就越能切中你的要害。
+    </p>
+    
+    <!-- 問題一 -->
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 4px solid #B71C1C; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <div style="color: #B71C1C; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+        1. 你最想改變的現狀是什麼？
+      </div>
+      <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+        試著用一句話描述你希望不同的地方。<br>
+        <span style="color: #888; font-size: 0.9rem;">例如：「我希望開會時能清晰表達自己的想法」</span>
+      </div>
+    </div>
+    
+    <!-- 問題二 -->
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 4px solid #F9A825; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <div style="color: #F9A825; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+        2. 這個問題存在多久了？
+      </div>
+      <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+        是最近才發生的，還是困擾你很久了？<br>
+        <span style="color: #888; font-size: 0.9rem;">時間長短會影響問題的性質與處理方式。</span>
+      </div>
+    </div>
+    
+    <!-- 問題三 -->
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #283593; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <div style="color: #283593; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+        3. 在什麼情境下最困擾你？
+      </div>
+      <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+        有沒有特定的場合、對象或時間點，會讓問題特別明顯？<br>
+        <span style="color: #888; font-size: 0.9rem;">例如：「每週團隊報告時，當老闆盯著我看的時候」</span>
+      </div>
+    </div>
+    
+    <!-- 看醫生類比 -->
+    <div style="background: #E8F5E9; padding: 1.2rem; border-radius: 8px; margin-top: 1.8rem; border-left: 4px solid #4CAF50;">
+      <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+        <div>
+          <strong style="color: #2E7D32; display: block; margin-bottom: 0.3rem;">🩺 就像看醫生一樣</strong>
+          <span style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+            症狀描述越詳細，診斷就越精準。<br>
+            但沒關係，<strong>從一句話開始也可以</strong>——我們可以在回信中慢慢釐清。
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 寫信小提醒 -->
+    <div style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF3E0 100%); padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #FFD54F; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; background: rgba(255,213,79,0.2); border-radius: 50%;"></div>
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+        <div style="font-size: 1.8rem;">✍️</div>
+        <h3 style="color: #8B6F00; margin: 0; font-size: 1.3rem; font-weight: 700;">寫信小提醒</h3>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem;">
+        <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #FF9800;">
+          <div style="color: #FF9800; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">📝 簡潔為佳</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">每個問題用1-3句話回答就好</div>
+        </div>
+        <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #F44336;">
+          <div style="color: #F44336; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">💖 真誠第一</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">真實感受比優美文字更重要</div>
+        </div>
+        <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #2196F3;">
+          <div style="color: #2196F3; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">⚡ 一次回覆</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">只會回覆一次，請提供完整資訊</div>
+        </div>
+        <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #4CAF50;">
+          <div style="color: #4CAF50; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">🤷‍♂️ 不知道也沒關係</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">直接寫「不知道」也是有價值的線索</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 你可以獲得什麼 -->
+  <div style="background: linear-gradient(135deg, #faf8f3 0%, #f5f2eb 100%); padding: 2rem; border-radius: 12px; margin: 2.5rem 0; border: 2px solid #F9A825; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(249,168,37,0.1); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: rgba(183,28,28,0.05); border-radius: 50%;"></div>
+    <strong style="color: #212121; display: block; margin-bottom: 1.5rem; font-size: 1.2rem; text-align: center; position: relative; z-index: 1;">
+      🗺️ 你將獲得一份「問題地圖」
+    </strong>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; position: relative; z-index: 1;">
+      <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #F9A825; transform: rotate(1deg); transition: all 0.3s ease;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+        <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">1. 核心定義</strong>
+        <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">幫你辨識出<br>真正要解決的那個問題</span>
+      </div>
+      <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #9C27B0; transform: rotate(-1deg); transition: all 0.3s ease;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🕸️</div>
+        <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2. 關聯脈絡</strong>
+        <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">看清問題之間的<br>連動關係與影響路徑</span>
+      </div>
+      <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #4CAF50; transform: rotate(0.5deg); transition: all 0.3s ease;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+        <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">3. 行動起點</strong>
+        <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">給你一個明確的<br>「下一步」行動建議</span>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem; color: #666; font-style: italic; position: relative; z-index: 1;">
+      — 不再在迷宮裡打轉，而是看清地形與出口 —
+    </div>
+  </div>
+  
+  <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); border-radius: 10px; border: 2px dashed #ddd; margin-top: 2rem;">
+    <strong style="color: #212121; font-size: 1.1rem;">🎁 這是我的見面禮</strong><br>
+    <span style="color: #666; display: block; margin-top: 0.5rem;">
+      也是<strong>唯一一次</strong>提供的免費梳理服務。
+    </span>
+    <span style="color: #888; font-size: 0.9rem; display: block; margin-top: 0.5rem; font-style: italic; line-height: 1.5;">
+      會根據你提供的資訊深度，給予相應的梳理。<br>
+      <strong>你的認真，會遇見我的認真。</strong>
+    </span>
+  </div>
+  
+  <!-- 聯絡選項區塊 - 左右並列 -->
+  <div style="margin: 3rem 0;">
+    <h2 style="color: #212121; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 3px solid #F9A825; padding-bottom: 0.8rem; display: inline-block;">
+      📬 立即聯絡
+    </h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1rem;">
+      <!-- 左側：電子郵件 -->
+      <div class="contact-option-card" style="background: linear-gradient(135deg, rgba(255,245,245,0.95) 0%, rgba(255,255,255,0.98) 100%); border-color: #C62828; position: relative; overflow: hidden; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="position: relative;">
+          <div style="font-size: 4rem; margin-bottom: 1.5rem; color: #C62828; text-align: center;">✉️</div>
+          <div style="position: absolute; top: 0; right: 0; width: 40px; height: 40px; background: rgba(198,40,40,0.1); border-radius: 50%;"></div>
+        </div>
+        <h3 style="color: #B71C1C; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; text-align: center;">電子郵件聯繫</h3>
+        <p style="color: #666; margin-bottom: 2rem; line-height: 1.6; font-size: 1.05rem; text-align: center; min-height: 70px;">
+          將你的「問題快照」寄到以下信箱<br>
+          <strong>我會在24-48小時內回覆</strong>
+        </p>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="mailto:survivalguide.tw@gmail.com" class="email-button" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; background: #C62828; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(198,40,40,0.3);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>寄送電子郵件</span>
+          </a>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(198,40,40,0.15); text-align: center;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; justify-content: center;">
+            <div style="color: #B71C1C; font-weight: bold; font-size: 0.95rem;">📋 使用指南</div>
+          </div>
+          <span style="color: #888; font-size: 0.9rem; line-height: 1.4; text-align: center; display: block;">
+            請先填寫上方的「問題快照」<br>
+            再寄信以獲得最精準的梳理
+          </span>
+        </div>
+      </div>
+      
+      <!-- 右側：貼圖專區 -->
+      <div class="contact-option-card" style="background: linear-gradient(135deg, rgba(243,229,245,0.95) 0%, rgba(255,255,255,0.98) 100%); border-color: #9C27B0; position: relative; overflow: hidden; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="position: relative;">
+          <div style="font-size: 4rem; margin-bottom: 1.5rem; color: #9C27B0; text-align: center;">🎨</div>
+          <div style="position: absolute; top: 0; left: 0; width: 40px; height: 40px; background: rgba(156,39,176,0.1); border-radius: 50%;"></div>
+        </div>
+        <h3 style="color: #9C27B0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; text-align: center;">支持創作</h3>
+        <p style="color: #666; margin-bottom: 2rem; line-height: 1.6; font-size: 1.05rem; text-align: center; min-height: 70px;">
+          歡迎選購我在 LINE 貼圖小舖的<br>
+          <strong>原創貼圖作品，支持獨立創作</strong>
+        </p>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <a href="https://store.line.me/stickershop/author/5376104/zh-Hant" target="_blank" class="sticker-button" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(156,39,176,0.3);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+              <path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z"/>
+            </svg>
+            <span>瀏覽貼圖小舖</span>
+          </a>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(156,39,176,0.15);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; justify-content: center;">
+            <div style="color: #9C27B0; font-weight: bold; font-size: 0.95rem;">💝 支持方式</div>
+          </div>
+          <span style="color: #888; font-size: 0.9rem; line-height: 1.4; text-align: center; display: block;">
+            直接購買貼圖，支持獨立創作<br>
+            讓更多實用內容得以持續
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 聯繫說明 -->
+  <div style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 12px; border: 2px solid #F9A825; box-shadow: 0 4px 16px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(249,168,37,0.05); border-radius: 50%; z-index: 0;"></div>
+    <div style="position: absolute; bottom: -40px; left: -40px; width: 120px; height: 120px; background: rgba(198,40,40,0.03); border-radius: 50%; z-index: 0;"></div>
+    <div style="position: relative; z-index: 1;">
+      <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem;">
+        <div style="font-size: 2rem;">📌</div>
+        <h3 style="color: #212121; margin: 0; font-size: 1.5rem; font-weight: 700;">聯繫說明</h3>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #C62828; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #C62828 0%, #B71C1C 100%);"></div>
+          <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #C62828;">✉️</div>
+          <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">Email</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">詳細問題討論<br>文件往來</div>
+        </div>
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #9C27B0; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);"></div>
+          <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #9C27B0;">🛍️</div>
+          <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">貼圖小舖</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">支持創作<br>購買貼圖</div>
+        </div>
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #283593; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #283593 0%, #1A237E 100%);"></div>
+          <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #283593;">📅</div>
+          <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">服務時間</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">平日<br>10:00-18:00</div>
+        </div>
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #4CAF50; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);"></div>
+          <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #4CAF50;">⏱️</div>
+          <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">回覆時間</div>
+          <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">24-72小時<br>內回覆</div>
+        </div>
+      </div>
+      <div style="margin-top: 2rem; padding: 1.2rem; background: rgba(249,168,37,0.05); border-radius: 8px; border-left: 4px solid #F9A825;">
+        <div style="color: #666; font-size: 0.9rem; line-height: 1.5; text-align: center;">
+          <strong>💡 溫馨提醒：</strong> 為了提供最佳的服務品質，請先閱讀上方的指南，再進行聯繫。
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{{ partial "footer.html" . }}
+{{ end }}

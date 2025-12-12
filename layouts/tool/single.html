@@ -1,0 +1,58 @@
+{{ define "main" }}
+<main class="landing-page" style="padding: 3rem 2rem; max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.08);">
+  <header style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family: 'Ma Shan Zheng', cursive; font-size: 2.6rem; color: #1a1a1a; margin-bottom: 1.2rem;">現代生存策：系統化破局工具</h1>
+    <p style="font-size: 1.15rem; color: #666; line-height: 1.7;">
+      這不是心靈雞湯，而是來自真實戰場的<strong>六大作戰系統</strong>。<br>
+      點選任一系統，即可開始你的破局之旅。
+    </p>
+  </header>
+
+  <!-- 六大系統卡片（僅前五項可點，戰略諮詢室導向聯絡） -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-bottom: 3rem;">
+    <a href="/modern/phenomenon/" class="landing-card" style="display: block; padding: 1.5rem; background: #fafafa; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--ink);">
+      <strong style="display: block; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.5rem;">🔍 現象顯影局</strong>
+      <span style="color: #666; font-size: 0.95rem;">為你說不出的憋屈，精準命名。</span>
+    </a>
+    <a href="/modern/rules/" class="landing-card" style="display: block; padding: 1.5rem; background: #fff5f5; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--vermilion);">
+      <strong style="display: block; font-size: 1.2rem; color: var(--vermilion); margin-bottom: 0.5rem;">🧩 規則破譯站</strong>
+      <span style="color: #666; font-size: 0.95rem;">看穿那些包裝成「為你好」的軟性綁架。</span>
+    </a>
+    <a href="/modern/decode/" class="landing-card" style="display: block; padding: 1.5rem; background: #f3f5ff; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--indigo);">
+      <strong style="display: block; font-size: 1.2rem; color: var(--indigo); margin-bottom: 0.5rem;">⚙️ 底層解碼所</strong>
+      <span style="color: #666; font-size: 0.95rem;">看清人、事、利益背後的系統棋盤。</span>
+    </a>
+    <a href="/modern/blueprint/" class="landing-card" style="display: block; padding: 1.5rem; background: #fffdf0; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--gold);">
+      <strong style="display: block; font-size: 1.2rem; color: #8b6f00; margin-bottom: 0.5rem;">🗺️ 解方藍圖庫</strong>
+      <span style="color: #666; font-size: 0.95rem;">無空話，只給能直接套用的作戰地圖。</span>
+    </a>
+    <a href="/modern/verify/" class="landing-card" style="display: block; padding: 1.5rem; background: #fff0f0; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--vermilion);">
+      <strong style="display: block; font-size: 1.2rem; color: var(--vermilion); margin-bottom: 0.5rem;">✅ 系統驗證場</strong>
+      <span style="color: #666; font-size: 0.95rem;">來自前線的真實回饋與策略調校。</span>
+    </a>
+    <a href="/contact/" class="landing-card" style="display: block; padding: 1.5rem; background: #f0f0ff; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid var(--indigo);">
+      <strong style="display: block; font-size: 1.2rem; color: var(--indigo); margin-bottom: 0.5rem;">🚪 戰略諮詢室</strong>
+      <span style="color: #666; font-size: 0.95rem;">1V1 破局指引，當你走到臨界點時。</span>
+    </a>
+  </div>
+
+  <!-- 引導區塊：讀完四篇後行動 -->
+  <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 2rem; border-radius: 12px; border: 2px solid #F9A825; text-align: center; margin-bottom: 2.5rem;">
+    <div style="font-size: 2rem; margin-bottom: 1rem;">🧭</div>
+    <h2 style="color: #1a1a1a; font-size: 1.4rem; margin-bottom: 1rem;">讀完四篇了嗎？下一步：</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 1.5rem;">
+      <a href="https://docs.google.com/forms/d/e/XXX" target="_blank" style="display: inline-block; background: var(--vermilion); color: white; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600;">填寫回饋</a>
+      <a href="/templates/modern-survival-guide.pdf" style="display: inline-block; background: var(--indigo); color: white; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600;">下載模板</a>
+    </div>
+    <p style="color: #666; font-size: 0.95rem; margin-top: 1.5rem; line-height: 1.5;">
+      你的回饋將幫助我優化內容，<br>
+      模板可直接套用於你的現實困境。
+    </p>
+  </div>
+
+  <!-- 規則提醒 -->
+  <div style="text-align: center; color: #888; font-size: 0.9rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+    <p>© 2025 衡真坊｜對的事情，就該堅持。</p>
+  </div>
+</main>
+{{ end }}

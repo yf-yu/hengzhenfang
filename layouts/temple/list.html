@@ -1,0 +1,110 @@
+{{ define "main" }}
+{{ partial "nav-bar.html" . }}
+
+<!-- 閱讀進度條（已由 baseof.html 自動插入，此處無需重複） -->
+
+<main class="inner-page temple-page">
+  <header class="page-header temple-header">
+    <h1 class="page-title">神性回憶錄</h1>
+    <p class="page-description">
+      這裡不提供標準答案，只收藏與神性共鳴的真實瞬間。<br>
+      一個讓心靈安放的靈感容器。
+    </p>
+  </header>
+
+  <!-- 1. 初印觀星台 -->
+  <section class="content-section yin-building">
+    <div class="building-header">
+      <div class="building-icon">🌙</div>
+      <h2 class="section-title">初印觀星台</h2>
+      <p class="building-subtitle">仰望星空，接收最初的靈感印記</p>
+    </div>
+    <div class="scroll-stone">
+      <div class="scroll-content">
+        <h2>初 印</h2>
+        <p>所有記憶航道的起點。在喧囂世界中，為你保留一處寧靜的共鳴座標。</p> 
+        <p>這裡只記錄與他之相遇，那份觸動心靈的真實顫動。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 回憶靜心齋 -->
+  {{ with .GetPage "/temple/meditation" }}
+  <section class="content-section yin-building">
+    <div class="building-header">
+      <div class="building-icon">🪞</div>
+      <h2 class="section-title">回憶靜心齋</h2>
+      <p class="building-subtitle">靜心內觀，安放神性觸動的真實瞬間</p>
+    </div>
+    <div class="section-content">
+      {{ .Content }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- 3. 神格藏經閣 -->
+  <section class="content-section yin-building">
+    <div class="building-header">
+      <div class="building-icon">🕯️</div>
+      <h2 class="section-title">神格藏經閣</h2>
+      <p class="building-subtitle">收藏與我共鳴的神明故事與神格特質</p>
+    </div>
+    <div class="section-content">
+      <div class="deity-series">
+        <!-- 邢王爺 -->
+        <a href="/temple/pantheon/xing/" class="deity-card">
+          <div class="deity-icon">邢</div>
+          <h3 class="deity-name">邢王爺</h3>
+          <p class="deity-desc">守底線的代天巡狩，剛正中帶溫柔的正義執行者</p>
+          <div class="deity-keywords">
+            <span class="keyword">正義</span>
+            <span class="keyword">剛正</span>
+            <span class="keyword">重情義</span>
+            <span class="keyword">會流淚</span>
+          </div>
+          <button class="explore-btn">探索邢王爺故事</button>
+        </a>
+        <!-- 池王爺 -->
+        <a href="/temple/pantheon/chi/" class="deity-card">
+          <div class="deity-icon">池</div>
+          <h3 class="deity-name">池王爺</h3>
+          <p class="deity-desc">奉旨除妖與未竟之約，使命感的遺憾</p>
+          <div class="deity-keywords">
+            <span class="keyword">除妖</span>
+            <span class="keyword">使命</span>
+            <span class="keyword">未竟</span>
+            <span class="keyword">白馬精</span>
+          </div>
+          <button class="explore-btn">探索池王爺故事</button>
+        </a>
+        <!-- 預留 -->
+        <div class="deity-card" style="opacity:0.6">
+          <div class="deity-icon">?</div>
+          <h3 class="deity-name">其他神明</h3>
+          <p class="deity-desc">待新增更多有共鳴的神明故事</p>
+          <div class="deity-keywords">
+            <span class="keyword">待補充</span>
+          </div>
+          <button class="explore-btn" disabled>敬請期待</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 共鳴聽雨軒 -->
+  {{ with .GetPage "/temple/listening" }}
+  <section class="content-section yin-building">
+    <div class="building-header">
+      <div class="building-icon">💎</div>
+      <h2 class="section-title">共鳴聽雨軒</h2>
+      <p class="building-subtitle">細聽內在共鳴，辨識真實觸動的頻率</p>
+    </div>
+    <div class="section-content">
+      {{ .Content }}
+    </div>
+  </section>
+  {{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+{{ end }}

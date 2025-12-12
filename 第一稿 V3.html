@@ -1,0 +1,3116 @@
+<!doctype html>
+<html lang="zh-TW">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="現代生存策與神性回憶錄 - 對的事情,就該堅持。提供生存法則、經濟獨立指引與信仰服務。">
+  <meta name="keywords" content="現代生存策,神性回憶錄,生存法則,經濟獨立,信仰服務">
+  <title>現代生存策與神性回憶錄</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='8' fill='%23F9A825' opacity='0.9'/><circle cx='50' cy='50' r='12' fill='none' stroke='%23F9A825' stroke-width='0.8' stroke-opacity='0.3' stroke-dasharray='2,1.5'/><circle cx='20' cy='20' r='0.8' fill='%23212121' opacity='0.3'/><circle cx='80' cy='20' r='0.8' fill='%23212121' opacity='0.3'/><circle cx='20' cy='80' r='0.8' fill='%23212121' opacity='0.3'/><circle cx='80' cy='80' r='0.8' fill='%23212121' opacity='0.3'/></svg>">
+<link rel="alternate icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABFUlEQVRYhe2XwQ3CMAxF7YBnGm7IgQkYARYoJ3oATsCOHZAQN2RgAS46QOE7IYlSmvjLtS0lTv3i2G2S1oQd0h8IYA0cB7Y9kKsPuAEZ8LwzBJDp3Eu13irAHNgApYG5tFU0T28A1sADOAInIK8ovgO56i5tkbM1AMAKWAFXIHlS/FKtZQ0AKHR5F7iAWMgCeAFHIwAq9qYDYITmIRxXwA1wA/6NmJ8KAnjzHxw0iw9Y6x8vgYORnwCg/C3yCFygp69Q0QAzXXS55d0FmGhs6SfgRZ23AvCgYV0wA5ADj5rCgpZ1QZbnASBDqgo6FHR82AHcVfD8bS5V+6Ej4w0k7QBVgH2rCQAAAABJRU5ErkJggg==" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&amp;family=Noto+Serif+TC:wght@400;700;900&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --vermilion: #C62828;
+            --ink: #1a1a1a;
+            --rice: #FAF8F3;
+            --gold: #D4AF37;
+            --pine-green: #2d5016;
+            --lake-blue: #3d5a80;
+            --indigo: #283593;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "PingFang TC", "Apple LiGothic Medium", sans-serif;
+            background: var(--rice);
+            color: var(--ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .page {
+            min-height: 100%;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        /* 首頁樣式 */
+        .home-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* ==================== */
+        /* 衡真坊書法大字樣式 */
+        /* ==================== */
+
+        /* 品牌標頭容器 */
+        .brand-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        /* 衡真坊書法大字 */
+        .hengzhen-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4.5rem;  /* 超大書法字 */
+            font-weight: 900;
+            color: #1a1a1a;
+            text-shadow: 
+                3px 3px 0 rgba(198,40,40,0.15),
+                6px 6px 0 rgba(212,175,55,0.1);
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 書法字墨跡效果 */
+        .hengzhen-title::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, 
+                transparent 0%, 
+                #C62828 30%, 
+                #D4AF37 70%, 
+                transparent 100%);
+            opacity: 0.6;
+        }
+
+        /* 品牌副標 */
+        .hengzhen-subtitle {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.3rem;
+            color: #666;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        /* Logo 容器 */
+        .hengzhen-logo {
+            margin-bottom: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* 導航列品牌 - 書法大字 */
+        .nav-brand {
+            font-family: 'Ma Shan Zheng', cursive !important;
+            font-size: 1.8rem !important;  /* 更大字體 */
+            font-weight: 700;
+            color: var(--vermilion);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        /* 導航列內的指南針也放大 */
+        .nav-brand .compass-logo {
+            width: 38px;
+            height: 38px;
+        }
+
+         /* 響應式調整 */
+    @media (max-width: 768px) {
+        .hengzhen-title {
+            font-size: 3.2rem;
+            text-shadow: 
+                2px 2px 0 rgba(198,40,40,0.15),
+                4px 4px 0 rgba(212,175,55,0.1);
+        }
+    
+        .hengzhen-subtitle {
+            font-size: 1.1rem;
+            }
+    
+        .nav-brand {
+            font-size: 1.5rem !important;
+            }
+        }
+
+        .core-belief {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            letter-spacing: 4px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .site-title {
+            font-size: 1.4rem;
+            color: var(--vermilion);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        .announcement-box {
+            background: white;
+            padding: 2.5rem 3rem;
+            border-radius: 8px;
+            margin-bottom: 4rem; /* 增加下方間距 */
+            max-width: 750px; /* 稍微加寬 */
+            box-shadow: 
+            0 8px 32px rgba(198, 40, 40, 0.08),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 1px solid rgba(249, 168, 37, 0.15);
+            border-top: 4px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 添加微妙的背景紋理 */
+        .announcement-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(249,168,37,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(40,53,147,0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .announcement-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .announcement-text {
+            font-size: 1.2rem; /* 稍加大字號 */
+            line-height: 1.9;
+            color: var(--ink);
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+
+        /* 「對自己誠實」特殊樣式 */
+        .truth-highlight {
+            color: #C62828; /* 真硃色 */
+            font-weight: 800;
+            font-size: 1.35rem;
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background: rgba(183, 28, 28, 0.05);
+            border-radius: 8px;
+            animation: subtlePulse 3s infinite;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        /* 確保公告欄內容層級在最上 */
+        .announcement-text * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .announcement-box {
+                padding: 2rem 1.5rem;
+                margin-bottom: 3rem;
+            }
+            .announcement-text {
+                font-size: 1.1rem;
+            }
+            .truth-highlight {
+                font-size: 1.2rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        .announcement-text strong {
+          color: var(--vermilion);
+          font-weight: 700;
+          display: block;
+          margin-top: 0.5rem;
+        }
+
+        .main-buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-btn {
+            background: var(--vermilion);
+            color: white;
+            padding: 2rem 3.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(33,33,33,0.25);
+            cursor: pointer;
+            border: none;
+            min-width: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(33,33,33,0.35);
+            background: #C62828;
+            border-color: #F9A825; /* 懸停時金色邊框 */
+        }
+
+        /* 內頁共用樣式 */
+        .inner-page {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .page-header {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid var(--vermilion);
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            color: var(--vermilion);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .page-description {
+            font-size: 1.15rem;
+            color: var(--ink);
+            line-height: 1.9;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            border-left: 5px solid var(--vermilion);
+            padding-left: 1.2rem;
+        }
+
+        .section-content {
+            font-size: 1rem;
+            color: var(--ink);
+            line-height: 1.8;
+        }
+
+        .section-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .section-content li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--vermilion);
+            font-weight: 700;
+        }
+
+        /* 六大作戰系統樣式 */
+        .six-chambers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chamber-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            padding-top: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: visible;
+            border: 2px solid #f0f0f0;
+            cursor: pointer;
+        }
+
+        .chamber-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            border-radius: 12px 12px 0 0;
+            transition: all 0.4s ease;
+        }
+
+        .chamber-card:nth-child(1)::before {
+            background: linear-gradient(135deg, var(--ink) 0%, #424242 100%);
+        }
+
+        .chamber-card:nth-child(2)::before {
+            background: linear-gradient(135deg, var(--vermilion) 0%, #E53935 100%);
+        }
+
+        .chamber-card:nth-child(3)::before {
+            background: linear-gradient(135deg, var(--indigo) 0%, #3949AB 100%);
+        }
+
+        .chamber-card:nth-child(4)::before {
+            background: linear-gradient(135deg, var(--gold) 0%, #F9A825 100%);
+        }
+
+        .chamber-card:nth-child(5)::before {
+            background: linear-gradient(135deg, var(--vermilion) 0%, #D32F2F 100%);
+        }
+
+        .chamber-card:nth-child(6)::before {
+            background: linear-gradient(135deg, var(--indigo) 0%, #303F9F 100%);
+        }
+
+        .chamber-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+            border-color: currentColor;
+        }
+
+        .chamber-card:hover::before {
+            height: 12px;
+        }
+
+        .chamber-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+        }
+
+        .chamber-card:hover .chamber-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 現象顯影局 - 眼睛圖標 */
+        .icon-phenomenon {
+            border-color: var(--ink);
+            background: 
+                radial-gradient(circle at 50% 50%, var(--ink) 0% 20%, transparent 20% 25%, var(--ink) 25% 28%, transparent 28%),
+                radial-gradient(ellipse 60% 35% at 50% 50%, transparent 0% 70%, var(--ink) 70% 100%),
+                var(--rice);
+        }
+
+        /* 規則破譯站 - 拼圖碎片 */
+        .icon-rules {
+            border-color: var(--vermilion);
+            background: 
+                radial-gradient(circle at 30% 30%, var(--vermilion) 0% 8%, transparent 8%),
+                radial-gradient(circle at 30% 50%, transparent 0% 12%, var(--vermilion) 12% 15%, transparent 15%),
+                linear-gradient(135deg, transparent 0% 35%, var(--vermilion) 35% 40%, transparent 40%),
+                linear-gradient(45deg, transparent 0% 55%, var(--vermilion) 55% 60%, transparent 60%),
+                radial-gradient(circle at 70% 70%, var(--vermilion) 0% 10%, transparent 10%),
+                linear-gradient(90deg, transparent 0% 45%, var(--vermilion) 45% 48%, transparent 48% 52%, var(--vermilion) 52% 55%, transparent 55%),
+                var(--rice);
+        }
+
+        /* 底層解碼所 - 層層遞進方框 */
+        .icon-decode {
+            border-color: var(--indigo);
+            background: 
+                linear-gradient(0deg, transparent 0% 20%, var(--indigo) 20% 23%, transparent 23% 77%, var(--indigo) 77% 80%, transparent 80%),
+                linear-gradient(90deg, transparent 0% 20%, var(--indigo) 20% 23%, transparent 23% 77%, var(--indigo) 77% 80%, transparent 80%),
+                linear-gradient(0deg, transparent 0% 35%, var(--indigo) 35% 37%, transparent 37% 63%, var(--indigo) 63% 65%, transparent 65%),
+                linear-gradient(90deg, transparent 0% 35%, var(--indigo) 35% 37%, transparent 37% 63%, var(--indigo) 63% 65%, transparent 65%),
+                var(--rice);
+        }
+
+        /* 解方藍圖庫 - 指南針 */
+        .icon-action {
+            border-color: var(--gold);
+            background: 
+                conic-gradient(from 0deg at 50% 50%, 
+                    var(--gold) 0deg 10deg, transparent 10deg 80deg,
+                    var(--gold) 80deg 100deg, transparent 100deg 170deg,
+                    var(--gold) 170deg 190deg, transparent 190deg 260deg,
+                    var(--gold) 260deg 280deg, transparent 280deg 350deg,
+                    var(--gold) 350deg 360deg),
+                radial-gradient(circle at 50% 50%, var(--gold) 0% 15%, transparent 15%),
+                var(--rice);
+        }
+
+        /* 系統驗證場 - 打勾標記 */
+        .icon-review {
+            border-color: var(--vermilion);
+            background: 
+                linear-gradient(125deg, transparent 0% 42%, var(--vermilion) 42% 48%, transparent 48%),
+                linear-gradient(55deg, transparent 0% 52%, var(--vermilion) 52% 58%, transparent 58%),
+                radial-gradient(circle at 50% 50%, transparent 0% 55%, var(--vermilion) 55% 58%, transparent 58%),
+                var(--rice);
+        }
+
+        /* 戰略諮詢室 - 榮光門扉 */
+        .icon-consulting {
+            border-color: var(--indigo);
+            background: 
+                linear-gradient(90deg, transparent 0% 30%, var(--indigo) 30% 35%, transparent 35% 65%, var(--indigo) 65% 70%, transparent 70%),
+                linear-gradient(0deg, transparent 0% 25%, var(--indigo) 25% 28%, transparent 28% 72%, var(--indigo) 72% 75%, transparent 75%),
+                radial-gradient(circle at 50% 50%, rgba(212,175,55,0.4) 0% 35%, transparent 35%),
+                radial-gradient(circle at 50% 50%, rgba(255,215,0,0.25) 0% 50%, transparent 50%),
+                var(--rice);
+        }
+
+        .chamber-content {
+            text-align: center;
+        }
+
+        .chamber-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 0.8rem;
+        }
+
+        .chamber-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 船票設計 - 統一框架 */
+        .ticket {
+            padding: 1.5rem 1.5rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            overflow: visible;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* 撕票孔虛線效果 */
+        .ticket::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                transparent 0px,
+                transparent 3px,
+                currentColor 3px,
+                currentColor 6px
+            );
+            opacity: 0.3;
+        }
+
+        /* 船票類型標籤 */
+        .ticket::after {
+            position: absolute;
+            top: -8px;
+            right: 16px;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .ticket-text {
+            position: relative;
+            z-index: 1;
+            line-height: 1.4;
+        }
+
+        /* 現象顯影局 - 洞察船票 */
+        .ticket-phenomenon {
+            border-color: var(--ink);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: var(--ink);
+        }
+
+        .ticket-phenomenon::after {
+            content: "洞察船票";
+            background: var(--ink);
+        }
+
+        .ticket-phenomenon:hover {
+            box-shadow: 0 4px 12px rgba(26,26,26,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* 規則破譯站 - 破譯船票 */
+        .ticket-rules {
+            border-color: var(--vermilion);
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+            color: var(--vermilion);
+        }
+
+        .ticket-rules::after {
+            content: "破譯船票";
+            background: var(--vermilion);
+        }
+
+        .ticket-rules:hover {
+            box-shadow: 0 4px 12px rgba(198,40,40,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 底層解碼所 - 解碼船票 */
+        .ticket-decode {
+            border-color: var(--indigo);
+            background: linear-gradient(135deg, #f3f5ff 0%, #e8edff 100%);
+            color: var(--indigo);
+        }
+
+        .ticket-decode::after {
+            content: "解碼船票";
+            background: var(--indigo);
+        }
+
+        .ticket-decode:hover {
+            box-shadow: 0 4px 12px rgba(40,53,147,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 解方藍圖庫 - 拆解船票 */
+        .ticket-solutions {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #fffdf0 0%, #fffae8 100%);
+            color: #8b6f00;
+        }
+
+        .ticket-solutions::after {
+            content: "拆解船票";
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        .ticket-solutions:hover {
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 系統驗證場 - 驗證船票 */
+        .ticket-review {
+            border-color: var(--vermilion);
+            background: linear-gradient(135deg, #fff0f0 0%, #ffe0e0 100%);
+            color: var(--vermilion);
+        }
+
+        .ticket-review::after {
+            content: "驗證船票";
+            background: var(--vermilion);
+        }
+
+        .ticket-review:hover {
+            box-shadow: 0 4px 12px rgba(198,40,40,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 戰略諮詢室 - 戰略通行證 */
+        .ticket-consulting {
+            border: 2px solid var(--indigo);
+            background: linear-gradient(135deg, #f0f0ff 0%, #e0e0ff 100%);
+            color: var(--indigo);
+            box-shadow: 0 4px 12px rgba(40,53,147,0.2);
+        }
+
+        .ticket-consulting::after {
+            content: "戰略通行證";
+            background: var(--indigo);
+        }
+
+        .ticket-consulting:hover {
+            box-shadow: 0 6px 16px rgba(40,53,147,0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Coming Soon 樣式 */
+        .coming-soon-placeholder {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px dashed #dee2e6;
+            margin: 2rem 0;
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .coming-soon-placeholder h3 {
+            color: var(--ink);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .coming-soon-placeholder p {
+            color: #6c757d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .notification-btn {
+            background: var(--vermilion);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+            font-family: inherit;
+        }
+
+        .notification-btn:hover {
+            background: #C62828;
+            transform: translateY(-2px);
+        }
+
+        .hand-drawn-divider {
+  height: 24px;
+  position: relative;
+  margin: 3rem auto;
+  width: 80%;
+  max-width: 500px;
+}
+
+.hand-drawn-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='20' viewBox='0 0 1200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 150 5, 300 15 T 600 10 T 900 15 T 1200 10' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-opacity='0.5' stroke-dasharray='10,8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateY(-50%);
+}
+
+        /* 聯絡頁面專用樣式 */
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid;
+        }
+
+        .contact-option.line {
+            border-top-color: #06C755;
+        }
+
+        .contact-option.email {
+            border-top-color: var(--vermilion);
+        }
+
+        .contact-option.stickers {
+            border-top-color: var(--gold);
+        }
+
+        .contact-option h3 {
+            color: var(--ink);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-option p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .sticker-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(156,39,176,0.3);
+        }
+
+        .sticker-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(156,39,176,0.4);
+            background: linear-gradient(135deg, #8E24AA 0%, #6A1B9A 100%);
+        }
+
+        .line-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #06C755;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(6,199,85,0.3);
+        }
+
+        .line-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(6,199,85,0.4);
+            background: #05b04b;
+        }
+
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--vermilion);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(198,40,40,0.3);
+        }
+
+        .email-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(198,40,40,0.4);
+            background: #C62828;
+        }
+
+        /* 松湖宮專用樣式 */
+        .temple-page {
+            background: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .temple-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="ink1" cx="50%%" cy="45%%"><stop offset="0%%" style="stop-color:%23616161;stop-opacity:0.45"/><stop offset="20%%" style="stop-color:%23525252;stop-opacity:0.65"/><stop offset="50%%" style="stop-color:%23393939;stop-opacity:0.85"/><stop offset="100%%" style="stop-color:%23212121;stop-opacity:1"/></radialGradient><radialGradient id="ink2" cx="30%%" cy="70%%"><stop offset="0%%" style="stop-color:%23858585;stop-opacity:0.35"/><stop offset="25%%" style="stop-color:%235c5c5c;stop-opacity:0.55"/><stop offset="60%%" style="stop-color:%233f3f3f;stop-opacity:0.75"/><stop offset="100%%" style="stop-color:%23212121;stop-opacity:1"/></radialGradient><radialGradient id="ink3" cx="75%%" cy="25%%"><stop offset="0%%" style="stop-color:%23787878;stop-opacity:0.4"/><stop offset="30%%" style="stop-color:%23525252;stop-opacity:0.6"/><stop offset="70%%" style="stop-color:%23363636;stop-opacity:0.8"/><stop offset="100%%" style="stop-color:%23212121;stop-opacity:1"/></radialGradient><linearGradient id="lakeGradient" x1="0%%" y1="0%%" x2="0%%" y2="100%%"><stop offset="0%%" style="stop-color:%23212121;stop-opacity:1"/><stop offset="45%%" style="stop-color:%233d5a80;stop-opacity:0.35"/><stop offset="55%%" style="stop-color:%233d5a80;stop-opacity:0.4"/><stop offset="100%%" style="stop-color:%23212121;stop-opacity:1"/></linearGradient><filter id="inkBlur"><feGaussianBlur in="SourceGraphic" stdDeviation="4"/></filter><filter id="motionBlur"><feGaussianBlur in="SourceGraphic" stdDeviation="2 0.5"/></filter></defs><rect width="1400" height="900" fill="%23212121"/><ellipse cx="700" cy="400" rx="550" ry="320" fill="url(%23ink1)" filter="url(%23inkBlur)" opacity="0.95"><animate attributeName="rx" values="550;585;555;580;550" dur="32s" repeatCount="indefinite"/><animate attributeName="ry" values="320;345;325;340;320" dur="32s" repeatCount="indefinite"/><animate attributeName="cx" values="700;705;698;703;700" dur="40s" repeatCount="indefinite"/></ellipse><ellipse cx="400" cy="650" rx="420" ry="240" fill="url(%23ink2)" filter="url(%23inkBlur)" opacity="0.9"><animate attributeName="rx" values="420;450;425;445;420" dur="36s" repeatCount="indefinite"/><animate attributeName="ry" values="240;260;245;255;240" dur="36s" repeatCount="indefinite"/><animate attributeName="cx" values="400;395;402;397;400" dur="44s" repeatCount="indefinite"/></ellipse><ellipse cx="1000" cy="280" rx="380" ry="210" fill="url(%23ink3)" filter="url(%23inkBlur)" opacity="0.85"><animate attributeName="rx" values="380;405;385;400;380" dur="34s" repeatCount="indefinite"/><animate attributeName="cy" values="280;298;285;295;280" dur="34s" repeatCount="indefinite"/><animate attributeName="ry" values="210;225;215;222;210" dur="34s" repeatCount="indefinite"/></ellipse><g opacity="0.3" filter="url(%23motionBlur)"><path d="M150,400 Q350,320 550,380 Q750,440 950,370 Q1100,320 1250,360" stroke="%23E0E0E0" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="8,4"><animate attributeName="d" values="M150,400 Q350,320 550,380 Q750,440 950,370 Q1100,320 1250,360;M150,412 Q350,332 550,392 Q750,452 950,382 Q1100,332 1250,372;M150,405 Q350,325 550,385 Q750,445 950,375 Q1100,325 1250,365;M150,400 Q350,320 550,380 Q750,440 950,370 Q1100,320 1250,360" dur="40s" repeatCount="indefinite"/><animate attributeName="stroke-dashoffset" values="0;-40;-80;-120" dur="40s" repeatCount="indefinite"/></path><path d="M100,500 Q300,440 500,500 Q700,560 900,490 Q1050,440 1300,500" stroke="%23BDBDBD" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,3"><animate attributeName="d" values="M100,500 Q300,440 500,500 Q700,560 900,490 Q1050,440 1300,500;M100,488 Q300,428 500,488 Q700,548 900,478 Q1050,428 1300,488;M100,495 Q300,435 500,495 Q700,555 900,485 Q1050,435 1300,495;M100,500 Q300,440 500,500 Q700,560 900,490 Q1050,440 1300,500" dur="38s" repeatCount="indefinite"/><animate attributeName="stroke-dashoffset" values="0;-30;-60;-90" dur="38s" repeatCount="indefinite"/></path></g><rect x="0" y="450" width="1400" height="450" fill="url(%23lakeGradient)" opacity="0.5"><animate attributeName="opacity" values="0.5;0.55;0.5" dur="50s" repeatCount="indefinite"/></rect></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .temple-page::after {
+            content: "";
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            right: -5%;
+            bottom: -5%;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(33,33,33,0.3) 70%, rgba(33,33,33,0.6) 100%);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 2;
+            animation: breathe 60s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1) translate(0, 0);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.05) translate(1%, -1%);
+                opacity: 0.85;
+            }
+        }
+
+        .temple-header {
+            background: rgba(250,248,243,0.96);
+            border-top: 4px solid #F9A825;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        /* 修正：確保所有頁面的導航列都是白色 */
+        .nav-bar {
+            background: white !important;
+            padding: 1.2rem 2.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--vermilion);
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 漢堡選單按鈕 - 僅在行動裝置顯示 */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--ink);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+/* 漢堡選單展開時的動畫 */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+/* 行動裝置導航列樣式 */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+    
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                gap: 0;
+            }
+    
+            .nav-links.active {
+               right: 0;
+            }
+    
+            .nav-link {
+                padding: 1rem 0;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+                text-align: left;
+                border-radius: 0;
+            }
+    
+            .nav-link::after {
+                display: none;
+            }
+    
+    /* 關閉遮罩 */
+            .nav-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+    
+            .nav-overlay.active {
+                display: block;
+            }
+        }
+
+        /* 導航列Logo - 極簡光點版本 */
+        .compass-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 光點核心 */
+        .compass-logo::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, 
+                #F9A825 0%, 
+                rgba(249,168,37,0.7) 30%, 
+                rgba(249,168,37,0.3) 70%, 
+                transparent 100%);
+            box-shadow: 
+                0 0 0 1px rgba(249,168,37,0.2),
+                0 0 15px rgba(249,168,37,0.3);
+            position: absolute;
+            z-index: 2;
+            animation: gentlePulse 4s ease-in-out infinite;
+        }
+
+        /* 光環 */
+        .compass-logo::after {
+            content: "";
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px dashed rgba(249,168,37,0.25);
+            animation: rotateSlow 20s linear infinite;
+        }
+
+        /* 四角錨點（用偽元素模擬兩個，用背景圖模擬四個） */
+        .compass-logo {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(33,33,33,0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, rgba(33,33,33,0.15) 1px, transparent 1px),
+                radial-gradient(circle at 20% 80%, rgba(33,33,33,0.15) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(33,33,33,0.15) 1px, transparent 1px);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* 動畫 */
+        @keyframes gentlePulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% { 
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--vermilion);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--vermilion);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .nav-link.active {
+            color: var(--vermilion);
+            font-weight: 700;
+        }
+
+        .nav-link.active::after {
+            width: 80%;
+            background: var(--vermilion);
+        }
+
+        /* 神性回憶錄專用字體 */
+        .temple-page {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .temple-page .page-title,
+        .temple-page .deity-name,
+        .temple-page .scroll-stone h2,
+        .temple-page .nav-brand span,
+        .temple-page .section-title,
+        .temple-page .deity-icon {
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+
+        .temple-page .deity-name {
+            font-size: 2.2rem !important;
+            font-weight: 900 !important;
+            color: #F9A825;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 3px;
+        }
+
+        .temple-page .deity-icon {
+            font-weight: 900;
+            font-size: 3.5rem !important;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .temple-page .page-title {
+            color: #F9A825;
+            text-shadow: 0 2px 8px rgba(249,168,37,0.3);
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .temple-page .section-title {
+            font-weight: 700;
+            border-left: 5px solid #F9A825;
+            color: var(--ink);
+        }
+
+        .temple-page .content-section {
+            background: rgba(250,248,243,0.95);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+        }
+
+        .temple-page .section-content {
+            color: var(--ink);
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        /* 神明系列導覽完整樣式 */
+        .deity-series {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .deity-card {
+            background: rgba(250,248,243,0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .deity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #F9A825;
+        }
+
+        .deity-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #F9A825 0%, #D4AF37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 6px 20px rgba(249,168,37,0.4);
+            border: 4px solid rgba(255,255,255,0.8);
+        }
+
+        .deity-desc {
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .deity-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .keyword {
+            background: rgba(249,168,37,0.1);
+            color: #F9A825;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(249,168,37,0.3);
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .explore-btn {
+            background: linear-gradient(135deg, #F9A825 0%, #D4AF37 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249,168,37,0.4);
+        }
+
+        /* 卷軸樣式 */
+        .scroll-stone {
+            background: linear-gradient(135deg, #fdf6e3 0%, #faf0d9 100%);
+            padding: 3rem 3.5rem;
+            margin: 2rem 0;
+            border-radius: 6px;
+            position: relative;
+            z-index: 10;
+            border-top: 8px solid #8b4513;
+            border-bottom: 8px solid #8b4513;
+            border-left: 1px solid #e8dcbf;
+            border-right: 1px solid #e8dcbf;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .scroll-stone h2 {
+            color: var(--vermilion);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.4);
+            padding-bottom: 0.8rem;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 4px rgba(198,40,40,0.2);
+        }
+
+        .scroll-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #3e2723;
+            text-align: justify;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 3.5rem 3rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            max-width: 650px;
+            margin: 2rem auto;
+            border-top: 5px solid #06C755;
+        }
+
+        .contact-title {
+            font-size: 2.3rem;
+            color: var(--vermilion);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .contact-description {
+            font-size: 1.15rem;
+            color: var(--ink);
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+        }
+
+        .footer {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-belief {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, 
+                #B71C1C 0%, 
+                #C62828 50%, 
+                #B71C1C 100%);
+            transform-origin: 0% 0%;
+            transform: scaleX(0);
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(198,40,40,0.4);
+            transition: transform 0.1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .core-belief {
+                font-size: 1.8rem;
+            }
+
+            .site-title {
+                font-size: 1.2rem;
+            }
+
+            .main-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .main-btn {
+                padding: 1.5rem 2rem;
+                font-size: 1.3rem;
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .announcement-box {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .contact-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .six-chambers {
+                grid-template-columns: 1fr;
+            }
+
+            .deity-series {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-options {
+                gap: 1rem;
+            }
+
+            .contact-option {
+                padding: 1.5rem;
+            }
+        }
+
+            /* 陰性建築框架樣式 */
+.yin-building {
+    background: rgba(250,248,243,0.95);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--indigo);
+    position: relative;
+    overflow: hidden;
+}
+
+.yin-building::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(40,53,147,0.02) 0%, 
+        transparent 50%,
+        rgba(40,53,147,0.01) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.building-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.building-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: gentleGlow 3s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.building-subtitle {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    font-family: 'Noto Serif TC', serif;
+}
+
+/* 確保原有內容不受影響 */
+.yin-building .scroll-stone,
+.yin-building .section-content,
+.yin-building .deity-series {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 陰性建築懸停效果 */
+.yin-building:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+
+/* 聯絡頁面優化樣式 */
+.contact-option-card {
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* 響應式調整 */
+@media (max-width: 1024px) {
+    .contact-box > div:last-child {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-option-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 聯絡選項卡片 */
+    .contact-option-card {
+        padding: 1.8rem;
+    }
+    
+    /* 聯絡說明區塊 - 手機版改為2列 */
+    .contact-box > div:last-child > div:last-child > div > div:last-child {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* 寫信小提醒卡片 - 手機版改為2列 */
+    .contact-description > div:first-child > div:last-child {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* 聯絡說明區塊 - 小手機改為1列 */
+    .contact-box > div:last-child > div:last-child > div > div:last-child {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* 寫信小提醒卡片 - 小手機改為1列 */
+    .contact-description > div:first-child > div:last-child {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 聯絡選項卡片 */
+    .contact-option-card {
+        padding: 1.5rem;
+    }
+    
+    .email-button,
+    .sticker-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* 聯絡頁面全寬設計 */
+.contact-full-width {
+    max-width: 100% !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.contact-header {
+    background: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+}
+
+.contact-title {
+    font-size: 3rem;
+    color: var(--vermilion);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.contact-subtitle {
+    font-size: 1.3rem;
+    color: var(--ink);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.section-card.full-width {
+    padding: 3rem 2rem;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.section-header .icon {
+    font-size: 2.2rem;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.center-header {
+    text-align: center;
+}
+
+/* 引導區塊 */
+.guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.guidance-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 5px solid var(--vermilion);
+    transition: all 0.3s ease;
+}
+
+.guidance-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.guidance-number {
+    width: 40px;
+    height: 40px;
+    background: var(--vermilion);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.guidance-content h3 {
+    color: var(--ink);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.guidance-content p {
+    color: #666;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.example {
+    background: rgba(249,168,37,0.1);
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #8B6F00;
+    border-left: 3px solid #F9A825;
+}
+
+/* 類比區塊 */
+.analogy-box {
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 2px solid #C8E6C9;
+}
+
+.analogy-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.analogy-content h4 {
+    color: #2E7D32;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.analogy-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 提醒區塊 */
+.reminders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.reminder-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.reminder-item:hover {
+    border-color: #ddd;
+    transform: translateX(5px);
+}
+
+.reminder-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.reminder-content h3 {
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.reminder-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 聯絡選項區塊 */
+.contact-options-section {
+    padding: 0 1rem;
+}
+
+.contact-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-option {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-option {
+    border-color: rgba(198,40,40,0.2);
+}
+
+.email-option:hover {
+    border-color: var(--vermilion);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(198,40,40,0.15);
+}
+
+.sticker-option {
+    border-color: rgba(156,39,176,0.2);
+}
+
+.sticker-option:hover {
+    border-color: #9C27B0;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(156,39,176,0.15);
+}
+
+.option-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.option-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.option-header h3 {
+    font-size: 1.8rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.email-option .option-header h3 {
+    color: #C62828;
+}
+
+.sticker-option .option-header h3 {
+    color: #9C27B0;
+}
+
+.option-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-content p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.option-action {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    min-width: 220px;
+    justify-content: center;
+}
+
+.email-button {
+    background: var(--vermilion);
+    color: white;
+    box-shadow: 0 4px 12px rgba(198,40,40,0.3);
+}
+
+.email-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(198,40,40,0.4);
+    background: #C62828;
+}
+
+.sticker-button {
+    background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(156,39,176,0.3);
+}
+
+.sticker-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(156,39,176,0.4);
+    background: linear-gradient(135deg, #8E24AA 0%, #6A1B9A 100%);
+}
+
+.option-tip {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #eee;
+}
+
+.tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tip-content strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.tip-content p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* 聯繫說明區塊 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.8rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.info-item:hover {
+    background: white;
+    border-color: #eee;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-content h4 {
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 最後備註 */
+.final-note {
+    background: linear-gradient(135deg, #FFF9C4 0%, #FFF3E0 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 2px solid #FFD54F;
+}
+
+.note-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.note-content h4 {
+    color: #8B6F00;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.note-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 1200px) {
+    .guidance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-options-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    
+    .reminders-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contact-section {
+        padding: 0 1rem;
+    }
+    
+    .section-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .guidance-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .analogy-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .action-button {
+        min-width: auto;
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+    
+    .contact-options-section {
+        padding: 0 0.5rem;
+    }
+}
+
+.letter-page .postscript {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gold);
+      text-align: center;
+    }
+    .letter-page .postscript h3 {
+      font-size: 1.8rem;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .letter-page .postscript p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+  
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  </head>
+  <body>
+  <div id="home" class="page active">
+    <main class="home-container">
+        <!-- 品牌標頭 -->
+        <div class="brand-header">
+            <!-- 衡真坊 Logo -->
+            <div class="hengzhen-logo">
+                <svg width="140" height="140" viewBox="0 0 100 100">
+                    <!-- 極簡光點，無窗框 -->
+                    <circle cx="50" cy="50" r="10" fill="url(#minimalLight)"/>
+                    
+                    <!-- 細微的光環 -->
+                    <circle cx="50" cy="50" r="15" fill="none" 
+                            stroke="rgba(249,168,37,0.2)"
+                            stroke-width="0.8"
+                            stroke-dasharray="3,1.5"/>
+                    
+                    <!-- 四角極細錨點 -->
+                    <circle cx="20" cy="20" r="1" fill="rgba(33,33,33,0.2)"/>
+                    <circle cx="80" cy="20" r="1" fill="rgba(33,33,33,0.2)"/>
+                    <circle cx="20" cy="80" r="1" fill="rgba(33,33,33,0.2)"/>
+                    <circle cx="80" cy="80" r="1" fill="rgba(33,33,33,0.2)"/>
+                    
+                    <defs>
+                        <radialGradient id="minimalLight" cx="50%" cy="50%">
+                            <stop offset="0%" stop-color="#F9A825"/>
+                            <stop offset="70%" stop-color="#F9A825" stop-opacity="0.5"/>
+                            <stop offset="100%" stop-color="#F9A825" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <!-- 衡真坊書法大字 -->
+            <h1 class="hengzhen-title">衡真坊</h1>
+    
+    <!-- 核心信念 -->
+    <h2 class="core-belief">對的事情，就該堅持。</h2>
+    <div class="announcement-box">
+    <div class="announcement-title">📢 最新公告</div>
+    <div class="announcement-text" id="announcement-text">
+      你可以善良到什麼程度？<br>
+      超過哪個階段會變愚蠢？<br>
+      超過哪個階段變服從？<br><br>    
+      <a href="javascript:navigateTo('heart');" class="truth-highlight" style="text-decoration: none; color: inherit;">真正的善良，是對自己誠實。</a>
+    </div>
+
+    <!-- 🔸 第二段：動態歷史公告（未來手動更新） -->
+  <div class="dynamic-announcements" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #ddd;">
+    <h4 style="font-size: 1.1rem; color: #666; margin-bottom: 1rem; display: inline-block;">📜 公告</h4>
+    <ul style="text-align: left; color: #555; font-size: 0.95rem; margin-top: 0.8rem;">
+      <li style="margin-bottom: 0.8rem;"><strong>2025/12/06</strong>：衡真坊正式啟動！</li>
+      <li style="margin-bottom: 0.8rem;"><strong>2025/12/01</strong>：《XXX》免費模板即將上線！</li>
+      <li><strong>2025/11/28</strong>：LINE 貼圖「XXX」已上架！</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="main-buttons"><button class="main-btn" onclick="navigateTo('modern')"> 
+        <span id="modern-btn-text">現代生存策</span> </button> <button class="main-btn" onclick="navigateTo('temple')"> <span id="temple-btn-text">神性回憶錄</span> </button>
+    </div>
+   </main>
+   <footer class="footer">
+    <div class="footer-belief" id="footer-belief">
+     對的事情，就該堅持。
+    </div>
+    <div class="footer-text">
+     © 2025 衡真坊
+    </div>
+   </footer>
+  </div>
+  <div id="modern" class="page">
+   <nav class="nav-bar">
+    <div class="nav-brand" onclick="navigateTo('home')">
+     <div class="compass-logo"></div><span>現代生存策</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+    <div class="nav-links"><button class="nav-link" onclick="navigateTo('home')">首頁</button> <button class="nav-link active">現代生存策</button> <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button> <button class="nav-link" onclick="navigateTo('contact')">聯絡我</button>
+    </div>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+   </nav>
+   <main class="inner-page">
+    <header class="page-header">
+     <h1 class="page-title" id="modern-title">現代生存策</h1>
+     <p class="page-description" id="modern-description">在這個快速變化的時代，掌握生存法則與經濟獨立技能是每個人的必修課。</p>
+    </header>
+    <section class="content-section">
+     <h2 class="section-title">⚡ 六大作戰系統</h2>
+     <div class="section-content">
+      <div class="six-chambers">
+       <div class="chamber-card">
+        <div class="chamber-icon icon-phenomenon"></div>
+        <div class="chamber-content">
+         <h3 class="chamber-name">🔍 現象顯影局</h3>
+         <p class="chamber-desc">為你說不出的憋屈，精準命名。</p>
+         <div class="ticket ticket-phenomenon"><span class="ticket-text">洞察船票</span>
+         </div>
+        </div>
+       </div>
+       <div class="chamber-card">
+        <div class="chamber-icon icon-rules"></div>
+        <div class="chamber-content">
+         <h3 class="chamber-name">🧩 規則破譯站</h3>
+         <p class="chamber-desc">看穿那些包裝成<strong>為你好</strong>的軟性綁架。</p>
+         <div class="ticket ticket-rules"><span class="ticket-text">破譯船票</span>
+         </div>
+        </div>
+       </div>
+       <div class="chamber-card">
+        <div class="chamber-icon icon-decode"></div>
+        <div class="chamber-content">
+         <h3 class="chamber-name">⚙️ 底層解碼所</h3>
+         <p class="chamber-desc">看清人、事、利益背後的系統棋盤。</p>
+         <div class="ticket ticket-decode"><span class="ticket-text">解碼船票</span>
+         </div>
+        </div>
+       </div>
+       <div class="chamber-card" onclick="navigateTo('solutions')">
+        <div class="chamber-icon icon-action"></div>
+        <div class="chamber-content">
+         <h3 class="chamber-name">🗺️ 解方藍圖庫</h3>
+         <p class="chamber-desc">無空話，只給能直接套用的作戰地圖。</p>
+         <div class="ticket ticket-solutions"><span class="ticket-text">拆解船票</span>
+         </div>
+        </div>
+       </div>
+       <div class="chamber-card">
+        <div class="chamber-icon icon-review"></div>
+        <div class="chamber-content">
+         <h3 class="chamber-name">✅ 系統驗證場</h3>
+         <p class="chamber-desc">來自前線的真實回饋與策略調校。</p>
+         <div class="ticket ticket-review"><span class="ticket-text">驗證船票</span>
+         </div>
+        </div>
+       </div>
+       <div class="chamber-card" onclick="navigateTo('contact')">
+    <div class="chamber-icon icon-consulting"></div>
+    <div class="chamber-content">
+        <h3 class="chamber-name">🚪 戰略諮詢室</h3>
+        <p class="chamber-desc">1V1 破局指引，當你走到臨界點時。</p>
+        <div class="ticket ticket-consulting" onclick="navigateTo('contact')">
+            <span class="ticket-text">戰略通行證</span>
+        </div>
+    </div>
+</div>
+      </div>
+     </div>
+    </section>
+    <section class="content-section">
+     <h2 class="section-title">💡 核心理念</h2>
+     <div class="section-content">
+      <p><strong>目標不是「討論」，而是「破局」。</strong></p>
+      <p>現代生存策不提供心靈雞湯，也不賣虛幻承諾。這裡給的是:精準命名你的困境、拆解系統性綁架、提供可直接執行的作戰藍圖。</p>
+      <p>每一個策略都來自真實戰場的驗證，每一條路徑都經過反覆測試。如果你已經走到臨界點，戰略諮詢室會是你的最後一道防線。</p>
+     </div>
+    </section>
+   </main>
+   <footer class="footer">
+    <div class="footer-belief">
+     對的事情，就該堅持。
+    </div>
+    <div class="footer-text">
+     © 2025 衡真坊
+    </div>
+   </footer>
+  </div>
+
+  <!-- 解方藍圖庫獨立頁面 -->
+  <div id="solutions" class="page">
+   <nav class="nav-bar">
+    <div class="nav-brand" onclick="navigateTo('home')">
+     <div class="compass-logo"></div><span>解方藍圖庫</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+    <div class="nav-links"><button class="nav-link" onclick="navigateTo('home')">首頁</button> <button class="nav-link" onclick="navigateTo('modern')">現代生存策</button> <button class="nav-link active">解方藍圖庫</button> <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button> <button class="nav-link" onclick="navigateTo('contact')">聯絡我</button>
+    </div>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+   </nav>
+   <main class="inner-page">
+    <header class="page-header">
+     <h1 class="page-title">🗺️ 解方藍圖庫</h1>
+     <p class="page-description">不談空話，只給能直接套用的作戰地圖。從免費資源到深度服務，提供完整的破局方案。</p>
+    </header>
+
+    <!-- 免費文章區塊 - Coming Soon -->
+    <section class="content-section">
+     <h2 class="section-title">📚 免費精選文章</h2>
+     <div class="section-content">
+      <div class="coming-soon-placeholder">
+       <div class="coming-soon-icon">📖</div>
+       <h3>精彩內容準備中</h3>
+       <p>我們正在為您準備實用的生存策略文章，敬請期待！</p>
+       <button class="notification-btn" onclick="alert('感謝關注！有新內容時會第一時間通知。')">有新內容時通知我</button>
+      </div>
+     </div>
+    </section>
+
+    <!-- 免費模板下載 - Coming Soon -->
+    <section class="content-section">
+     <h2 class="section-title">🆓 免費實用模板</h2>
+     <div class="section-content">
+      <div class="coming-soon-placeholder">
+       <div class="coming-soon-icon">📋</div>
+       <h3>實用工具開發中</h3>
+       <p>我們正在打造能直接套用的實戰模板，即將上線！</p>
+      </div>
+     </div>
+    </section>
+
+    <!-- 升級提醒 -->
+    <section class="content-section">
+     <h2 class="section-title">🚀 準備好更進一步？</h2>
+     <div class="section-content">
+      <div class="coming-soon-placeholder">
+       <div class="coming-soon-icon">⚡</div>
+       <h3>進階服務規劃中</h3>
+       <p>我們正在設計更深入的個人化服務，為您提供專屬的破局方案。</p>
+       <button class="notification-btn" onclick="navigateTo('contact')">立即聯繫諮詢</button>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="footer">
+    <div class="footer-belief">對的事情，就該堅持。</div>
+    <div class="footer-text">© 2025 衡真坊</div>
+   </footer>
+  </div>
+
+  <div id="temple" class="page temple-page">
+   <div class="reading-progress" id="readingProgress"></div>
+   <nav class="nav-bar">
+    <div class="nav-brand" onclick="navigateTo('home')">
+     <div class="compass-logo"></div><span>神性回憶錄</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+    <div class="nav-links">
+        <button class="nav-link" onclick="navigateTo('home')">首頁</button> 
+        <button class="nav-link" onclick="navigateTo('modern')">現代生存策</button> 
+        <button class="nav-link active">神性回憶錄</button> 
+        <button class="nav-link" onclick="navigateTo('contact')">聯絡我</button>
+    </div>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+   </nav>
+   
+   <main class="inner-page">
+    <header class="page-header temple-header">
+     <h1 class="page-title" id="temple-title">神性回憶錄</h1>
+     <p class="page-description" id="temple-description">
+        這裡不提供標準答案，只收藏與神性共鳴的真實瞬間。<br>
+        一個讓心靈安放的靈感容器。
+     </p>
+    </header>
+
+    <!-- 1. 初印觀星台 -->
+    <section class="content-section yin-building">
+        <div class="building-header">
+            <div class="building-icon">🌙</div>
+            <h2 class="section-title">初印觀星台</h2>
+            <p class="building-subtitle">仰望星空，接收最初的靈感印記</p>
+        </div>
+        
+        <!-- 原有的卷軸內容 -->
+        <div class="scroll-stone">
+            <div class="scroll-content">
+                <h2>初 印</h2>
+                <p>所有記憶航道的起點。在喧囂世界中，為你保留一處寧靜的共鳴座標。</p> 
+                <p>這裡只記錄與他之相遇，那份觸動心靈的真實顫動。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 回憶靜心齋 -->
+    <section class="content-section yin-building">
+        <div class="building-header">
+            <div class="building-icon">🪞</div>
+            <h2 class="section-title">回憶靜心齋</h2>
+            <p class="building-subtitle">靜心內觀，安放神性觸動的真實瞬間</p>
+        </div>
+        
+        <div class="section-content">
+            <p>不提供標準信仰服務，而是<strong>記錄個人靈感共鳴的場域</strong>。</p>
+            <p>只書寫那些與我內在真實產生共鳴的神明故事，並嘗試解讀其神格特質背後，照出人性課題與生存啟示。</p>
+            <p><strong>📜 記錄原則：</strong> 不評判、不強加，只誠實記錄共鳴的瞬間，作為一面映照心性的鏡子。</p>
+        </div>
+    </section>
+
+    <!-- 3. 神格藏經閣 -->
+    <section class="content-section yin-building">
+        <div class="building-header">
+            <div class="building-icon">🕯️</div>
+            <h2 class="section-title">神格藏經閣</h2>
+            <p class="building-subtitle">收藏與我共鳴的神明故事與神格特質</p>
+        </div>
+        
+        <div class="section-content">
+            <div class="deity-series">
+                <!-- 邢王爺 --> 
+                <div class="deity-card" onclick="navigateTo('deity-xing')">
+                    <div class="deity-icon">邢</div>
+                    <h3 class="deity-name">邢王爺</h3>
+                    <p class="deity-desc">守底線的代天巡狩，剛正中帶溫柔的正義執行者</p>
+                    <div class="deity-keywords">
+                        <span class="keyword">正義</span>
+                        <span class="keyword">剛正</span>
+                        <span class="keyword">重情義</span>
+                        <span class="keyword">會流淚</span>
+                    </div>
+                    <button class="explore-btn">探索邢王爺故事</button>
+                </div>
+
+                <!-- 池王爺 -->
+                <div class="deity-card" onclick="navigateTo('deity-chi')">
+                    <div class="deity-icon">池</div>
+                    <h3 class="deity-name">池王爺</h3>
+                    <p class="deity-desc">奉旨除妖與未竟之約，使命感的遺憾</p>
+                    <div class="deity-keywords">
+                        <span class="keyword">除妖</span>
+                        <span class="keyword">使命</span>
+                        <span class="keyword">未竟</span>
+                        <span class="keyword">白馬精</span>
+                    </div>
+                    <button class="explore-btn">探索池王爺故事</button>
+                </div>
+
+                <!-- 預留位置 -->
+                <div class="deity-card" style="opacity:0.6">
+                    <div class="deity-icon">?</div>
+                    <h3 class="deity-name">其他神明</h3>
+                    <p class="deity-desc">待新增更多有共鳴的神明故事</p>
+                    <div class="deity-keywords">
+                        <span class="keyword">待補充</span>
+                    </div>
+                    <button class="explore-btn" disabled>敬請期待</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 共鳴聽雨軒 -->
+    <section class="content-section yin-building">
+        <div class="building-header">
+            <div class="building-icon">💎</div>
+            <h2 class="section-title">共鳴聽雨軒</h2>
+            <p class="building-subtitle">細聽內在共鳴，辨識真實觸動的頻率</p>
+        </div>
+        
+        <div class="section-content">
+            <p><strong>共鳴之真：</strong>只記錄真實觸動內心的神格，不為填補內容而書寫。</p>
+            <p><strong>映照之鏡：</strong>從神性故事反觀自我心性，探索內在的渴望與課題。</p>
+            <p><strong>衡定之錨：</strong>在紛亂的信仰資訊中，提供一個基於個人真實體驗的參照點。</p>
+        </div>
+    </section>
+   </main>
+   
+   <footer class="footer">
+    <div class="footer-belief">對的事情，就該堅持。</div>
+    <div class="footer-text">© 2025 衡真坊</div>
+   </footer>
+</div>
+
+<!-- 邢王爺詳細頁面 -->
+<div id="deity-xing" class="page temple-page">
+    <nav class="nav-bar">
+        <div class="nav-brand" onclick="navigateTo('home')">
+            <div class="compass-logo"></div>
+            <span>邢王爺</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+        <div class="nav-links">
+            <button class="nav-link" onclick="navigateTo('home')">首頁</button>
+            <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button>
+            <button class="nav-link active">邢王爺</button>
+        </div>
+        <div class="nav-overlay" onclick="toggleMenu()"></div>
+    </nav>
+    <main class="inner-page">
+        <div class="deity-detail-header">
+            <div class="deity-profile">
+                <div class="deity-profile-img">
+                    <div class="deity-surname">邢</div>
+                </div>
+                <div class="deity-keywords">
+                    <span class="keyword">代天巡狩</span>
+                    <span class="keyword">正義</span>
+                    <span class="keyword">剛正</span>
+                    <span class="keyword">重情義</span>
+                </div>
+            </div>
+            
+            <div class="deity-quick-info">
+                <h2 class="deity-name">邢王爺</h2>
+                <p class="deity-desc">守底線的代天巡狩，在正義與慈悲之間尋找平衡的聖君。</p>
+                
+                <div class="info-item">
+                    <div class="info-label">神格特質</div>
+                    <div>剛正不阿卻富有人情味，會為信徒流淚，重情重義</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">主要事蹟</div>
+                    <div>除妖安民、主持正義、無奈決策、兄弟結義</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">相關廟宇</div>
+                    <div>嘉義東石 松湖宮（主祀）</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">🏯 廟宇資訊</h2>
+            <div class="section-content">
+                <div class="info-item">
+                    <div class="info-label">【廟名】松湖宮</div>
+                    <div>📍 地址：嘉義縣東石鄉○○村○○號</div>
+                    <div>📅 邢王爺主要祭典：農曆○月○日</div>
+                    <div>📞 聯絡方式：待官方提供</div>
+                </div>
+                <p><em>註：作者個人敘事僅聚焦於邢王爺，詳見《神性回憶錄》。</em></p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">📚 邢王爺故事集</h2>
+            <div class="section-content">
+                <div class="coming-soon-placeholder">
+                    <div class="coming-soon-icon">⛩️</div>
+                    <h3>神明故事撰寫中</h3>
+                    <p>我們正在整理邢王爺的精彩故事，即將為您呈現！</p>
+                    <button class="notification-btn" onclick="alert('感謝您的耐心等待！邢王爺的故事正在精心準備中。')">故事完成時通知我</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-belief">對的事情，就該堅持。</div>
+        <div class="footer-text">© 2025 衡真坊</div>
+    </footer>
+</div>
+
+<!-- 池王爺詳細頁面 -->
+<div id="deity-chi" class="page temple-page">
+    <nav class="nav-bar">
+        <div class="nav-brand" onclick="navigateTo('home')">
+            <div class="compass-logo"></div>
+            <span>池王爺</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+        <div class="nav-links">
+            <button class="nav-link" onclick="navigateTo('home')">首頁</button>
+            <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button>
+            <button class="nav-link active">池王爺</button>
+        </div>
+        <div class="nav-overlay" onclick="toggleMenu()"></div>
+    </nav>
+    <main class="inner-page">
+        <div class="deity-detail-header">
+            <div class="deity-profile">
+                <div class="deity-profile-img">
+                    <div class="deity-surname">池</div>
+                </div>
+                <div class="deity-keywords">
+                    <span class="keyword">除妖使命</span>
+                    <span class="keyword">未竟之約</span>
+                    <span class="keyword">白馬精</span>
+                </div>
+            </div>
+            
+            <div class="deity-quick-info">
+                <h2 class="deity-name">池王爺</h2>
+                <p class="deity-desc">奉旨除妖與未竟之約，使命感的遺憾</p>
+                
+                <div class="info-item">
+                    <div class="info-label">神格特質</div>
+                    <div>使命必達的執行者，因未完成任務而遺憾</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">主要事蹟</div>
+                    <div>奉旨除妖、白馬精傳說、未竟使命</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">相關廟宇</div>
+                    <div>待補充相關廟宇資訊</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">🏯 池王爺故事</h2>
+            <div class="section-content">
+                <div class="coming-soon-placeholder">
+                    <div class="coming-soon-icon">📜</div>
+                    <h3>故事內容準備中</h3>
+                    <p>池王爺的傳奇故事正在整理中，敬請期待！</p>
+                    <button class="notification-btn" onclick="alert('池王爺的故事即將完成，感謝您的關注！')">故事完成時通知我</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-belief">對的事情，就該堅持。</div>
+        <div class="footer-text">© 2025 衡真坊</div>
+    </footer>
+</div>
+
+  <!-- 聯絡頁面（已全面優化） -->
+<div id="contact" class="page">
+   <nav class="nav-bar">
+    <div class="nav-brand" onclick="navigateTo('home')">
+     <div class="compass-logo"></div><span>聯絡我</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+    <div class="nav-links"><button class="nav-link" onclick="navigateTo('home')">首頁</button> <button class="nav-link" onclick="navigateTo('modern')">現代生存策</button> <button class="nav-link" onclick="navigateTo('solutions')">解方藍圖庫</button> <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button> <button class="nav-link active">聯絡我</button>
+    </div>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+   </nav>
+   <main class="inner-page">
+        <!-- 聯絡頁面專用 header -->
+        <div class="contact-header">
+            <h1 class="contact-title">與我聯繫</h1>
+            <p class="contact-subtitle">
+                🌀 如果你覺得問題一團亂，不知道從哪開始<br>    
+                我<strong>唯一擅長且負責的事</strong>，就是幫你從混亂中，<br>
+                <strong style="border-bottom: 2px solid #F9A825;">梳理出真正關鍵的那「個」點。</strong>
+            </p>
+        </div>
+
+        <!-- 問題快照框架 -->
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2.5rem 0; border: 2px solid #e9ecef;">
+            <div style="color: #283593; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem; line-height: 1.5;">
+                💡 請在信中告訴我這三件事，幫助我更理解你的狀況：
+            </div>
+            <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+                為了在<strong>一次回信</strong>中給你最有價值的梳理，請盡量提供以下資訊。<br>
+                不用完美，但越完整，我的梳理就越能切中你的要害。
+            </p>
+            <!-- 問題一 -->
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 4px solid #B71C1C; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                <div style="color: #B71C1C; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+                    1. 你最想改變的現狀是什麼？
+                </div>
+                <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                    試著用一句話描述你希望不同的地方。<br>
+                    <span style="color: #888; font-size: 0.9rem;">例如：「我希望開會時能清晰表達自己的想法」</span>
+                </div>
+            </div>
+            <!-- 問題二 -->
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 4px solid #F9A825; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                <div style="color: #F9A825; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+                    2. 這個問題存在多久了？
+                </div>
+                <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                    是最近才發生的，還是困擾你很久了？<br>
+                    <span style="color: #888; font-size: 0.9rem;">時間長短會影響問題的性質與處理方式。</span>
+                </div>
+            </div>
+            <!-- 問題三 -->
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #283593; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                <div style="color: #283593; font-weight: bold; margin-bottom: 0.5rem; font-size: 1rem;">
+                    3. 在什麼情境下最困擾你？
+                </div>
+                <div style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                    有沒有特定的場合、對象或時間點，會讓問題特別明顯？<br>
+                    <span style="color: #888; font-size: 0.9rem;">例如：「每週團隊報告時，當老闆盯著我看的時候」</span>
+                </div>
+            </div>
+            <!-- 看醫生類比 -->
+            <div style="background: #E8F5E9; padding: 1.2rem; border-radius: 8px; margin-top: 1.8rem; border-left: 4px solid #4CAF50;">
+                <div style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                    <div>
+                        <strong style="color: #2E7D32; display: block; margin-bottom: 0.3rem;">🩺 就像看醫生一樣</strong>
+                        <span style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                            症狀描述越詳細，診斷就越精準。<br>
+                            但沒關係，<strong>從一句話開始也可以</strong>——我們可以在回信中慢慢釐清。
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 優化版：寫信小提醒 -->
+            <div style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF3E0 100%); padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #FFD54F; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; background: rgba(255,213,79,0.2); border-radius: 50%;"></div>
+                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <div style="font-size: 1.8rem;">✍️</div>
+                    <h3 style="color: #8B6F00; margin: 0; font-size: 1.3rem; font-weight: 700;">寫信小提醒</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem;">
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #FF9800;">
+                        <div style="color: #FF9800; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">📝 簡潔為佳</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">每個問題用1-3句話回答就好</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #F44336;">
+                        <div style="color: #F44336; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">💖 真誠第一</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">真實感受比優美文字更重要</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #2196F3;">
+                        <div style="color: #2196F3; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">⚡ 一次回覆</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">只會回覆一次，請提供完整資訊</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                        <div style="color: #4CAF50; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem;">🤷‍♂️ 不知道也沒關係</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4;">直接寫「不知道」也是有價值的線索</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 活化版：你可以獲得什麼 -->
+        <div style="background: linear-gradient(135deg, #faf8f3 0%, #f5f2eb 100%); padding: 2rem; border-radius: 12px; margin: 2.5rem 0; border: 2px solid #F9A825; position: relative; overflow: hidden;">
+            <!-- 裝飾性背景元素 -->
+            <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(249,168,37,0.1); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: rgba(183,28,28,0.05); border-radius: 50%;"></div>
+            <strong style="color: #212121; display: block; margin-bottom: 1.5rem; font-size: 1.2rem; text-align: center; position: relative; z-index: 1;">
+                🗺️ 你將獲得一份「問題地圖」
+            </strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; position: relative; z-index: 1;">
+                <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #F9A825; transform: rotate(1deg); transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+                    <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">1. 核心定義</strong>
+                    <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">幫你辨識出<br>真正要解決的那個問題</span>
+                </div>
+                <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #9C27B0; transform: rotate(-1deg); transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🕸️</div>
+                    <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">2. 關聯脈絡</strong>
+                    <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">看清問題之間的<br>連動關係與影響路徑</span>
+                </div>
+                <div style="flex: 1; min-width: 250px; background: white; padding: 1.8rem 1.5rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 5px solid #4CAF50; transform: rotate(0.5deg); transition: all 0.3s ease;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+                    <strong style="color: #212121; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">3. 行動起點</strong>
+                    <span style="color: #666; font-size: 0.95rem; line-height: 1.5;">給你一個明確的<br>「下一步」行動建議</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; color: #666; font-style: italic; position: relative; z-index: 1;">
+                — 不再在迷宮裡打轉，而是看清地形與出口 —
+            </div>
+        </div>
+        <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%); border-radius: 10px; border: 2px dashed #ddd; margin-top: 2rem;">
+    <strong style="color: #212121; font-size: 1.1rem;">🎁 這是我的見面禮</strong><br>
+    <span style="color: #666; display: block; margin-top: 0.5rem;">
+        也是<strong>唯一一次</strong>提供的免費梳理服務。
+    </span>
+    <span style="color: #888; font-size: 0.9rem; display: block; margin-top: 0.5rem; font-style: italic; line-height: 1.5;">
+        會根據你提供的資訊深度，給予相應的梳理。<br>
+        <strong>你的認真，會遇見我的認真。</strong>
+    </span>
+</div>
+
+        <!-- 優化版：聯絡選項區塊 - 左右並列 -->
+        <div style="margin: 3rem 0;">
+            <h2 style="color: #212121; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 3px solid #F9A825; padding-bottom: 0.8rem; display: inline-block;">
+                📬 立即聯絡
+            </h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1rem;">
+                <!-- 左側：電子郵件 -->
+                <div class="contact-option-card" style="background: linear-gradient(135deg, rgba(255,245,245,0.95) 0%, rgba(255,255,255,0.98) 100%); border-color: #C62828; position: relative; overflow: hidden; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="position: relative;">
+                        <div style="font-size: 4rem; margin-bottom: 1.5rem; color: #C62828; text-align: center;">✉️</div>
+                        <div style="position: absolute; top: 0; right: 0; width: 40px; height: 40px; background: rgba(198,40,40,0.1); border-radius: 50%;"></div>
+                    </div>
+                    <h3 style="color: #B71C1C; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; text-align: center;">電子郵件聯繫</h3>
+                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.6; font-size: 1.05rem; text-align: center; min-height: 70px;">
+                        將你的「問題快照」寄到以下信箱<br>
+                        <strong>我會在24-48小時內回覆</strong>
+                    </p>
+                    <div style="margin-top: 1.5rem; text-align: center;">
+                        <a href="mailto:survivalguide.tw@gmail.com" class="email-button" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; background: #C62828; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(198,40,40,0.3);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>寄送電子郵件</span>
+                        </a>
+                    </div>
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(198,40,40,0.15); text-align: center;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; justify-content: center;">
+                            <div style="color: #B71C1C; font-weight: bold; font-size: 0.95rem;">📋 使用指南</div>
+                        </div>
+                        <span style="color: #888; font-size: 0.9rem; line-height: 1.4; text-align: center; display: block;">
+                            請先填寫上方的「問題快照」<br>
+                            再寄信以獲得最精準的梳理
+                        </span>
+                    </div>
+                </div>
+                <!-- 右側：貼圖專區 -->
+                <div class="contact-option-card" style="background: linear-gradient(135deg, rgba(243,229,245,0.95) 0%, rgba(255,255,255,0.98) 100%); border-color: #9C27B0; position: relative; overflow: hidden; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="position: relative;">
+                        <div style="font-size: 4rem; margin-bottom: 1.5rem; color: #9C27B0; text-align: center;">🎨</div>
+                        <div style="position: absolute; top: 0; left: 0; width: 40px; height: 40px; background: rgba(156,39,176,0.1); border-radius: 50%;"></div>
+                    </div>
+                    <h3 style="color: #9C27B0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; text-align: center;">支持創作</h3>
+                    <p style="color: #666; margin-bottom: 2rem; line-height: 1.6; font-size: 1.05rem; text-align: center; min-height: 70px;">
+                        歡迎選購我在 LINE 貼圖小舖的<br>
+                        <strong>原創貼圖作品，支持獨立創作</strong>
+                    </p>
+                    <div style="margin-top: 1.5rem; text-align: center;">
+                        <a href="https://store.line.me/stickershop/author/5376104/zh-Hant" target="_blank" class="sticker-button" style="display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(156,39,176,0.3);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                                <path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M21,18.5c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z"/>
+                            </svg>
+                            <span>瀏覽貼圖小舖</span>
+                        </a>
+                    </div>
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(156,39,176,0.15);">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; justify-content: center;">
+                            <div style="color: #9C27B0; font-weight: bold; font-size: 0.95rem;">💝 支持方式</div>
+                        </div>
+                        <span style="color: #888; font-size: 0.9rem; line-height: 1.4; text-align: center; display: block;">
+                            直接購買貼圖，支持獨立創作<br>
+                            讓更多實用內容得以持續
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 優化版：聯繫說明 -->
+        <div style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 12px; border: 2px solid #F9A825; box-shadow: 0 4px 16px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+            <!-- 裝飾性背景元素 -->
+            <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(249,168,37,0.05); border-radius: 50%; z-index: 0;"></div>
+            <div style="position: absolute; bottom: -40px; left: -40px; width: 120px; height: 120px; background: rgba(198,40,40,0.03); border-radius: 50%; z-index: 0;"></div>
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem;">
+                    <div style="font-size: 2rem;">📌</div>
+                    <h3 style="color: #212121; margin: 0; font-size: 1.5rem; font-weight: 700;">聯繫說明</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #C62828; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #C62828 0%, #B71C1C 100%);"></div>
+                        <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #C62828;">✉️</div>
+                        <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">Email</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">詳細問題討論<br>文件往來</div>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #9C27B0; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);"></div>
+                        <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #9C27B0;">🛍️</div>
+                        <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">貼圖小舖</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">支持創作<br>購買貼圖</div>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #283593; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #283593 0%, #1A237E 100%);"></div>
+                        <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #283593;">📅</div>
+                        <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">服務時間</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">平日<br>10:00-18:00</div>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top: 4px solid #4CAF50; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);"></div>
+                        <div style="font-size: 2rem; margin-bottom: 0.8rem; color: #4CAF50;">⏱️</div>
+                        <div style="color: #212121; font-weight: 700; margin-bottom: 0.3rem; font-size: 1rem;">回覆時間</div>
+                        <div style="color: #666; font-size: 0.9rem; line-height: 1.4; text-align: center;">24-72小時<br>內回覆</div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.2rem; background: rgba(249,168,37,0.05); border-radius: 8px; border-left: 4px solid #F9A825;">
+                    <div style="color: #666; font-size: 0.9rem; line-height: 1.5; text-align: center;">
+                        <strong>💡 溫馨提醒：</strong> 為了提供最佳的服務品質，請先閱讀上方的指南，再進行聯繫。
+                    </div>
+                </div>
+            </div>
+        </div>
+   </main>
+   <footer class="footer">
+    <div class="footer-belief">
+     對的事情，就該堅持。
+    </div>
+    <div class="footer-text">
+     © 2025 衡真坊
+    </div>
+   </footer>
+  </div>
+
+  <div id="heart" class="page">
+    <nav class="nav-bar">
+      <div class="nav-brand" onclick="navigateTo('home')">
+        <div class="compass-logo"></div>
+        <span>內在誠實</span>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <button class="nav-link" onclick="navigateTo('home')">首頁</button>
+        <button class="nav-link" onclick="navigateTo('modern')">現代生存策</button>
+        <button class="nav-link" onclick="navigateTo('temple')">神性回憶錄</button>
+      </div>
+      <div class="nav-overlay" onclick="toggleMenu()"></div>
+    </nav>
+    <main class="letter-page" style="max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem; background: #fdf6e3;">
+      <div style="background: white; padding: 3rem 2.5rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <h1 style="font-family: 'Ma Shan Zheng', cursive; font-size: 2.8rem; text-align: center; margin-bottom: 2rem; color: #1a1a1a;">我只是沒再騙自己</h1>
+        
+        <div style="font-family: 'Noto Serif TC', serif; font-size: 1.15rem; line-height: 2; color: #3e2723; text-align: justify;">
+          <p>當一個人能真正看見自己的內心，並依此行動——不是言語上的誠實，而是靈魂層面的「知行合一」，這個世界，將迎來一場寧靜卻徹底的革命。</p>
+          <p>這不是語言的改變，是能量的重組</p>
+          <p>短期，會是撕裂的痛。恩……會很痛。</p>
+          <div class="hand-drawn-divider"></div>
+          <p>你會突然看清：</p>
+          <blockquote>
+            「做這份工作——不是因為熱愛，是因為害怕失去安全感。」<br>
+            「留在這段關係裡——不是因為愛，是因為怕孤單。」<br>
+            「拜神——不是因為信仰，是因為我有求於你。」
+          </blockquote>
+          <p>這些真相，無處可逃。</p>
+          <p>你無法再用 <strong>孝順</strong>、<strong>責任</strong>、<strong>理想</strong> 來包裝它們。</p>
+          <p>所以你可能會感到 <strong>孤獨</strong>、<strong>羞恥</strong>，甚至是 <strong>崩潰</strong>。</p>
+          <p>但當你穿過這片黑暗，你會發現——<strong>內耗消失了。</strong></p>
+          <p>你不再與自己戰爭。你做的每一個決定，都來自你的本心，而非恐懼或期待。</p>
+          <p>一個清潔工，若真心喜愛安靜與秩序，</p>
+          <p>他比一個內心撕裂的 CEO，活得更為富足。</p>
+          <p>不是因為他擁有更多，而是因為 —— <strong>他活成了自己。</strong></p>
+          <div class="hand-drawn-divider"></div>
+          <h2>社會：從強迫，走向共鳴</h2>
+          <p>職業不再由名利驅動，而由 <strong>天賦</strong> 與 <strong>熱情</strong> 自然吸引。</p>
+          <p>最好的老師，是那些內心渴望傳授的人；<br>
+          最好的工程師，是那些真心愛解決問題的人。</p>
+          <p>創造力，不再被壓榨而是被喚醒。</p>
+          <p>人際關係不再建立在利益交換或孤獨恐懼上，是基於能量的相互滋養。</p>
+          <p>友誼純淨，愛情自由，合作誠實。</p>
+          <p>你不需要討好，也不需要隱藏。</p>
+          <p>消費主義會自然萎縮，因為人們終於知道：<br>
+          <em>物質無法填補靈魂的空洞。</em></p>
+          <p>社會的價值，將轉向 <strong>體驗</strong>、<strong>成長</strong>、<strong>深度</strong> 與 <strong>內在的平靜</strong>。</p>
+          <p>當所有人都能內在誠實，</p>
+          <p>你的掙扎將不再被視為「叛逆」，</p>
+          <p>而是被理解為——<blockquote>「你正在回歸自己。」</blockquote>
+          <p>你的父母若能誠實面對自己 會說：</p>
+          <blockquote>「我反對你不是因為你錯了，<br>
+             是因為我害怕我自己從未有勇氣，去活出真實。」</blockquote>
+          <p>但那種理解，本身就能融化所有對立。</p>
+          <h2>共鳴：從雜音，到交響</h2>
+          <p>每個人，都像一支獨特的樂器。</p>
+          <p>當他們不再為他人而調音，而是回歸自己的頻率，</p>
+          <p>整個社會，便從一片雜音，</p>
+          <p>變成一曲恢弘的交響。</p>
+          <p>衝突不會消失，但會從「虛偽的利益之爭」，<br>
+          轉為「真實觀點的對話」——</p>
+          <p>就像小提琴與大提琴的對話，不是為了壓過對方，<br>
+          而是為了成就一首更完整的樂章。</p>
+          
+          <div class="postscript">
+            <h3>🌿 跋</h3>
+            <p>這不是我的思想，是人類最古老的智慧，在當代的呼吸。</p>
+            <p>從王陽明的「心即理」，到禪宗的「直指人心」，<br>
+            再到所有沉默者心底的那句：<br>
+            <em>「我累了，不想再騙自己了。」</em></p>
+            <p>我只是，把這句話，寫了下來。<br>
+            並選擇，活出來。</p>
+            <p style="margin-top: 1.5rem; font-style: italic; color: #666;">
+              這不是理論。這是我在活的樣子。
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-belief">對的事情，就該堅持。</div>
+      <div class="footer-text">© 2025 衡真坊</div>
+    </footer>
+  </div>
+
+  <script>
+        function navigateTo(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+            
+            const progressBar = document.getElementById('readingProgress');
+            if (progressBar) {
+                progressBar.style.transform = 'scaleX(0)';
+            }
+        }
+
+        function updateReadingProgress() {
+            const progressBar = document.getElementById('readingProgress');
+            if (!progressBar) return;
+            
+            const templePage = document.getElementById('temple');
+            if (!templePage || !templePage.classList.contains('active')) return;
+            
+            const windowHeight = window.innerHeight;
+            const documentHeight = templePage.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+            const clampedPercent = Math.min(Math.max(scrollPercent, 0), 100);
+            
+            progressBar.style.transform = `scaleX(${clampedPercent / 100})`;
+        }
+
+        window.addEventListener('scroll', updateReadingProgress);
+        window.addEventListener('resize', updateReadingProgress);
+
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.nav-overlay');
+    
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+    
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+
+// 點擊導航連結後自動關閉選單
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+                const overlay = document.querySelector('.nav-overlay');
+        
+                if (hamburger && hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    if (overlay) overlay.classList.remove('active');
+                }
+            });
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.nav-overlay');
+        if (hamburger && hamburger.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+          if (overlay) overlay.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

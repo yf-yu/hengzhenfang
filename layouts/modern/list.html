@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ partial "nav-bar.html" . }}
+
+<main class="inner-page">
+  <header class="page-header">
+    <h1 class="page-title">現代生存策</h1>
+    <p class="page-description">在這個快速變化的時代，掌握生存法則與經濟獨立技能是每個人的必修課。</p>
+  </header>
+
+  <section class="content-section">
+    <h2 class="section-title">⚡ 六大作戰系統</h2>
+    <div class="six-chambers">
+      <!-- 1. 現象顯影局 -->
+      <a href="/modern/phenomenon/" class="chamber-card">
+        <div class="chamber-icon icon-phenomenon"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">🔍 現象顯影局</h3>
+          <p class="chamber-desc">為你說不出的憋屈，精準命名。</p>
+          <div class="ticket ticket-phenomenon"><span class="ticket-text">洞察船票</span></div>
+        </div>
+      </a>
+
+      <!-- 2. 規則破譯站 -->
+      <a href="/modern/rules/" class="chamber-card">
+        <div class="chamber-icon icon-rules"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">🧩 規則破譯站</h3>
+          <p class="chamber-desc">看穿那些包裝成<strong>為你好</strong>的軟性綁架。</p>
+          <div class="ticket ticket-rules"><span class="ticket-text">破譯船票</span></div>
+        </div>
+      </a>
+
+      <!-- 3. 底層解碼所 -->
+      <a href="/modern/decode/" class="chamber-card">
+        <div class="chamber-icon icon-decode"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">⚙️ 底層解碼所</h3>
+          <p class="chamber-desc">看清人、事、利益背後的系統棋盤。</p>
+          <div class="ticket ticket-decode"><span class="ticket-text">解碼船票</span></div>
+        </div>
+      </a>
+
+      <!-- 4. 解方藍圖庫 -->
+      <a href="/modern/blueprint/" class="chamber-card">
+        <div class="chamber-icon icon-action"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">🗺️ 解方藍圖庫</h3>
+          <p class="chamber-desc">無空話，只給能直接套用的作戰地圖。</p>
+          <div class="ticket ticket-solutions"><span class="ticket-text">拆解船票</span></div>
+        </div>
+      </a>
+
+      <!-- 5. 系統驗證場 -->
+      <a href="/modern/verify/" class="chamber-card">
+        <div class="chamber-icon icon-review"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">✅ 系統驗證場</h3>
+          <p class="chamber-desc">來自前線的真實回饋與策略調校。</p>
+          <div class="ticket ticket-review"><span class="ticket-text">驗證船票</span></div>
+        </div>
+      </a>
+
+      <!-- 6. 戰略諮詢室 → 跳轉聯絡頁 -->
+      <a href="/contact/" class="chamber-card">
+        <div class="chamber-icon icon-consulting"></div>
+        <div class="chamber-content">
+          <h3 class="chamber-name">🚪 戰略諮詢室</h3>
+          <p class="chamber-desc">1V1 破局指引，當你走到臨界點時。</p>
+          <div class="ticket ticket-consulting"><span class="ticket-text">戰略通行證</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="section-title">💡 核心理念</h2>
+    <div class="section-content">
+      <p><strong>目標不是「討論」，而是「破局」。</strong></p>
+      <p>現代生存策不提供心靈雞湯，也不賣虛幻承諾。這裡給的是：精準命名你的困境、拆解系統性綁架、提供可直接執行的作戰藍圖。</p>
+      <p>每一個策略都來自真實戰場的驗證，每一條路徑都經過反覆測試。如果你已經走到臨界點，戰略諮詢室會是你的最後一道防線。</p>
+    </div>
+  </section>
+</main>
+
+{{ partial "footer.html" . }}
+{{ end }}

@@ -1,0 +1,36 @@
+{{ define "main" }}
+<nav class="nav-bar">
+  <div class="nav-brand" onclick="window.location.href='/'">
+    {{ partial "compass-logo.html" . }}
+    <span>內在誠實</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a class="nav-link" href="/">首頁</a>
+    <a class="nav-link" href="/modern/">現代生存策</a>
+    <a class="nav-link" href="/temple/">神性回憶錄</a>
+  </div>
+  <div class="nav-overlay" onclick="toggleMenu()"></div>
+</nav>
+
+<main class="letter-page">
+  <div style="background: white; padding: 3rem 2.5rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <h1 style="font-family: 'Ma Shan Zheng', cursive; font-size: 2.8rem; text-align: center; margin-bottom: 2rem; color: #1a1a1a;">{{ .Title }}</h1>
+    <div style="font-family: 'Noto Serif TC', serif; font-size: 1.15rem; line-height: 2; color: #3e2723; text-align: justify;">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <!-- 返回首頁按鈕（你要求「看完回到首頁」） -->
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="/" class="main-btn" style="padding: 1rem 2.5rem; font-size: 1.2rem;">返回首頁</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-belief">對的事情，就該堅持。</div>
+  <div class="footer-text">© 2025 衡真坊</div>
+</footer>
+{{ end }}
